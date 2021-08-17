@@ -292,15 +292,16 @@
          data-aos-duration="300"
          data-aos-delay='100'>
       <button @click="increaseIndex">
-        <img src="@/assets/img/appstore.svg" class="img-fluid"/> Download
+        <img src="@/assets/img/appstore.svg" class="img-fluid" /> Download
         Payzapp
       </button>
     </div>
+    <div class="circle_block" :class="anima_class"></div>
   </div>
 </template>
 
 <script>
-import {mapActions} from "vuex";
+import { mapActions } from "vuex";
 import Food from "@/components/payzappcomponent/Screen/CashBackList/Food";
 import Grocries from "@/components/payzappcomponent/Screen/CashBackList/Grocries";
 import Bill from "@/components/payzappcomponent/Screen/CashBackList/Bill";
@@ -316,6 +317,7 @@ export default {
   components: {Entertainment, Food, Grocries, Bill, Services, vuescrollCarousel, Swiper, SwiperSlide},
   data() {
     return {
+      anima_class : null,
       selected_index: 0,
       selected_width: 110,
       swiperOptions1: {
@@ -326,7 +328,7 @@ export default {
       swiperOptions2: {
         slidesPerView: 1
       }
-    }
+    };
   },
   computed: {
     swiperFirst() {
@@ -339,6 +341,14 @@ export default {
       var value = this.selected_index * this.selected_width
       return { 'width': this.selected_width.toString() + 'px !important', 'transform': 'translate3d(' + value.toString() +'px, 0px, 0px)', 'transition': 'all .2s linear'}
     }
+  },
+  mounted() {
+    // Add ripple zoom in
+    this.anima_class = "button-zoom-in";
+    setTimeout(() => {
+      // remove ripple zoom out
+      this.anima_class = "button-zoom-out";
+    }, 300);
   },
   methods: {
     onThumbnailChange(val) {
@@ -355,26 +365,26 @@ export default {
             this.$refs.secondTab.scrollIntoView({ behavior: "smooth" });
             break;
           }
-
         }
         // this.$refs.topView.scrollIntoView({ behavior: "smooth" });
-      })
+      });
     },
     changeOnButtonClick(val) {
-      this.selected_index = val
-      this.$refs.swip2.$swiper.slideTo(val)
+      this.selected_index = val;
+      this.$refs.swip2.$swiper.slideTo(val);
     },
     ...mapActions("payzappcampaign", ["increaseIndex"])
-  },
+  }
 };
 </script>
 
 <style scoped>
 .active {
-  -webkit-transition: width .1s linear 0s, -webkit-transform .1s linear 0s !important;
-  transition: width .1s linear 0s, -webkit-transform .1s linear 0s !important;
-  transition: width .1s linear 0s, transform .1s linear 0s !important;
-  transition: width .1s linear 0s, transform .1s linear 0s, -webkit-transform .1s linear 0s !important;
+  -webkit-transition: width 0.1s linear 0s, -webkit-transform 0.1s linear 0s !important;
+  transition: width 0.1s linear 0s, -webkit-transform 0.1s linear 0s !important;
+  transition: width 0.1s linear 0s, transform 0.1s linear 0s !important;
+  transition: width 0.1s linear 0s, transform 0.1s linear 0s,
+    -webkit-transform 0.1s linear 0s !important;
 }
 
 .tab-active-bar {

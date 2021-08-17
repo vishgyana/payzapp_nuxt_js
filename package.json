@@ -21,8 +21,8 @@
     "swiper": "^6.8.2",
     "vue-awesome-swiper": "^4.1.1",
     "vue-confetti": "^2.2.2",
-    "vuescroll-carousel": "^0.0.13",
-    "vuescroll": "^4.17.3"
+    "vuescroll": "^4.17.3",
+    "vuescroll-carousel": "^0.0.13"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^4.2.0",
@@ -32,8 +32,8 @@
     "jest": "^27.0.5",
     "nuxt-animejs": "^1.2.1",
     "postcss": "^8.3.5",
-    "vue-jest": "^3.0.4",
     "sass-loader": "^10",
+    "vue-jest": "^3.0.4",
     "vue-template-compiler": "^2.6.11"
   }
 }

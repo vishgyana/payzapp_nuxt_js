@@ -15,7 +15,7 @@
           xmlns:xlink="http://www.w3.org/1999/xlink"
         >
           <g filter="url(#filter0_dd)">
-            <rect x="10" y="10" width="84" height="30" rx="4" fill="#FAFAFA"/>
+            <rect x="10" y="10" width="84" height="30" rx="4" fill="#FAFAFA" />
             <mask
               id="mask0"
               mask-type="alpha"
@@ -47,14 +47,14 @@
               filterUnits="userSpaceOnUse"
               color-interpolation-filters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
               <feColorMatrix
                 in="SourceAlpha"
                 type="matrix"
                 values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
               />
-              <feOffset dx="2" dy="2"/>
-              <feGaussianBlur stdDeviation="4"/>
+              <feOffset dx="2" dy="2" />
+              <feGaussianBlur stdDeviation="4" />
               <feColorMatrix
                 type="matrix"
                 values="0 0 0 0 0.933333 0 0 0 0 0.00392157 0 0 0 0 0.00784314 0 0 0 0.1 0"
@@ -69,8 +69,8 @@
                 type="matrix"
                 values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
               />
-              <feOffset dx="-2" dy="-2"/>
-              <feGaussianBlur stdDeviation="4"/>
+              <feOffset dx="-2" dy="-2" />
+              <feGaussianBlur stdDeviation="4" />
               <feColorMatrix
                 type="matrix"
                 values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"
@@ -120,7 +120,7 @@
           xmlns="http://www.w3.org/2000/svg"
         >
           <g filter="url(#filter0_dd)">
-            <circle cx="28" cy="28" r="16" fill="#FAFAFA"/>
+            <circle cx="28" cy="28" r="16" fill="#FAFAFA" />
             <path
               fill-rule="evenodd"
               clip-rule="evenodd"
@@ -144,15 +144,15 @@
               filterUnits="userSpaceOnUse"
               color-interpolation-filters="sRGB"
             >
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
               <feColorMatrix
                 in="SourceAlpha"
                 type="matrix"
                 values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
                 result="hardAlpha"
               />
-              <feOffset dx="4" dy="4"/>
-              <feGaussianBlur stdDeviation="4"/>
+              <feOffset dx="4" dy="4" />
+              <feGaussianBlur stdDeviation="4" />
               <feColorMatrix
                 type="matrix"
                 values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0"
@@ -168,8 +168,8 @@
                 values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
                 result="hardAlpha"
               />
-              <feOffset dx="-4" dy="-4"/>
-              <feGaussianBlur stdDeviation="4"/>
+              <feOffset dx="-4" dy="-4" />
+              <feGaussianBlur stdDeviation="4" />
               <feColorMatrix
                 type="matrix"
                 values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"
@@ -193,9 +193,9 @@
     <div class="grid h-90 grid-cols">
       <div class="main_content">
         <h2 class="ml10 text-center font-bold text-3xl mb-2">
-            <span class="text-wrapper">
-              <span class="letters">Surprise!</span>
-            </span>
+          <span class="text-wrapper">
+            <span class="letters">Surprise!</span>
+          </span>
         </h2>
         <h1 class="ml6 text-center font-bold text-3xl mb-2">
           <span class="text-wrapper">
@@ -206,12 +206,13 @@
           <span class="word">Surprise!</span>
         </h1>
         <h1 class="ml16 text-center font-bold text-3xl mb-2">Surprise!</h1>
-        <p class="text-center font-normal text-base mb-8"
-           v-if="isShowsurprisesection"
-           data-aos="fade"
-           data-aos-easing="ease-in-out"
-           data-aos-duration="300"
-           data-aos-delay="2400"
+        <p
+          class="text-center font-normal text-base mb-8"
+          v-if="isShowsurprisesection"
+          data-aos="fade"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="300"
+          data-aos-delay="2400"
         >
           Scratch the card to unveil them.
         </p>
@@ -233,19 +234,16 @@
     >
       <button @click="clickCall">Curious? Find out how</button>
     </div>
-    <div class="circle_block" :class="anima_class"></div>
   </div>
 </template>
 <script>
-import {mapActions, mapState} from "vuex";
+import { mapActions, mapState } from "vuex";
 import Vuescratchcard from "@/components/Vuescratchcard/index.vue";
 
 export default {
-  components: {Vuescratchcard},
+  components: { Vuescratchcard },
   data() {
     return {
-      anima_class: "",
-      back_show: true,
       show_data: true
     };
   },
@@ -260,144 +258,101 @@ export default {
     }
   },
   methods: {
-    ...mapActions("payzappcampaign", ["increaseIndex", "setShowcuriousbutton"]),
-    clickCall() {
+    ...mapActions("payzappcampaign", ["setShowcuriousbutton"]),
+    navigateNextpage() {
       this.$router.push({
         name: "offers-campaign_member_id",
-        params: {campaign_member_id: "hewhw"}
+        params: { campaign_member_id: "hewhw" }
       });
-
-      this.anima_class = "button-zoom-in";
-      this.setShowcuriousbutton(false);
-
-      setTimeout(() => {
-        this.show_data = false;
-      }, 10);
-      setTimeout(() => {
-        this.anima_class = "button-zoom-out";
-      }, 300);
-      setTimeout(() => {
-        this.back_show = false;
-      }, 400);
-      setTimeout(() => {
-        this.increaseIndex();
-      }, 800);
+    },
+    clickCall() {
+      this.navigateNextpage();
     },
 
     animeanimate() {
       // Wrap every letter in a span
-      var textWrapper = document.querySelector('.ml10 .letters');
-      textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+      var textWrapper = document.querySelector(".ml10 .letters");
+      textWrapper.innerHTML = textWrapper.textContent.replace(
+        /\S/g,
+        "<span class='letter'>$&</span>"
+      );
 
       // Wrap every letter in a span
-      var textWrapper = document.querySelector('.ml6 .letters');
-      textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+      var textWrapper = document.querySelector(".ml6 .letters");
+      textWrapper.innerHTML = textWrapper.textContent.replace(
+        /\S/g,
+        "<span class='letter'>$&</span>"
+      );
 
       // Wrap every letter in a span
-      var textWrapper = document.querySelector('.ml16');
-      textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+      var textWrapper = document.querySelector(".ml16");
+      textWrapper.innerHTML = textWrapper.textContent.replace(
+        /\S/g,
+        "<span class='letter'>$&</span>"
+      );
 
-      this.$anime.timeline({loop: true})
+      this.$anime
+        .timeline({ loop: true })
         .add({
-          targets: '.ml16 .letter',
-          translateY: [-100,0],
+          targets: ".ml16 .letter",
+          translateY: [-100, 0],
           easing: "easeOutExpo",
           duration: 1400,
           delay: (el, i) => 30 * i
-        }).add({
-        targets: '.ml16',
-        opacity: 0,
-        duration: 1000,
-        easing: "easeOutExpo",
-        delay: 1000
-      })
+        })
         .add({
-          targets: '.ml15 .word',
-          scale: [14,1],
-          opacity: [0,1],
+          targets: ".ml16",
+          opacity: 0,
+          duration: 1000,
+          easing: "easeOutExpo",
+          delay: 1000
+        })
+        .add({
+          targets: ".ml15 .word",
+          scale: [14, 1],
+          opacity: [0, 1],
           easing: "easeOutCirc",
           duration: 800,
           delay: (el, i) => 800 * i
-        }).add({
-        targets: '.ml15',
-        opacity: 0,
-        duration: 1000,
-        easing: "easeOutExpo",
-        delay: 1000
-      })
+        })
         .add({
-          targets: '.ml6 .letter',
+          targets: ".ml15",
+          opacity: 0,
+          duration: 1000,
+          easing: "easeOutExpo",
+          delay: 1000
+        })
+        .add({
+          targets: ".ml6 .letter",
           translateY: ["1.1em", 0],
           translateZ: 0,
           duration: 750,
           delay: (el, i) => 50 * i
-        }).add({
-        targets: '.ml6',
-        opacity: 0,
-        duration: 1000,
-        easing: "easeOutExpo",
-        delay: 1000
-      })
+        })
         .add({
-          targets: '.ml10 .letter',
+          targets: ".ml6",
+          opacity: 0,
+          duration: 1000,
+          easing: "easeOutExpo",
+          delay: 1000
+        })
+        .add({
+          targets: ".ml10 .letter",
           rotateY: [-90, 0],
           duration: 1300,
           delay: (el, i) => 45 * i
-        }).add({
-        targets: '.ml10',
-        opacity: 0,
-        duration: 1000,
-        easing: "easeOutExpo",
-        delay: 1000
-      });
+        })
+        .add({
+          targets: ".ml10",
+          opacity: 0,
+          duration: 1000,
+          easing: "easeOutExpo",
+          delay: 1000
+        });
     }
   },
   mounted() {
     this.animeanimate();
-
   }
 };
 </script>
-
-<style scoped>
-.circle_block {
-  position: fixed;
-  width: 5px;
-  height: 5px;
-  background-color: #0076ff;
-  border-radius: 50%;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  bottom: 50px;
-  opacity: 0;
-}
-
-.button-zoom-in {
-  animation: ZoomIn 0.25s ease-in-out forwards;
-}
-
-.button-zoom-out {
-  animation: ZoomOut 0.25s ease-in-out forwards;
-}
-@keyframes ZoomIn {
-  0% {
-    transform: scale(0);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(400);
-    opacity: 1;
-  }
-}
-@keyframes ZoomOut {
-  0% {
-    transform: scale(400);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(0);
-    opacity: 1;
-  }
-}
-</style>
