@@ -14,7 +14,7 @@ export default {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["~/assets/css/style.css"],
+  css: ["~/assets/css/style.css",'aos/dist/aos.css'],
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: "@/plugins/aos", mode: "client" },
@@ -26,14 +26,9 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxtjs/tailwindcss",
-    '@nuxtjs/ngrok',
     'nuxt-animejs'
   ],
   animejs: true,
-  server: {
-    port: 8000, // default: 3000
-    host: '0.0.0.0', // default: localhost
-  },   // other configs
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
@@ -49,8 +44,4 @@ export default {
       "zoom-in"
     ]
   },
-  ngrok: {
-    // module options
-    authtoken: '1wfX25hXE9eqYM56jFGP4sy0E84_2eidW8j5hemBq1h8uNFce'
-  }
 };
