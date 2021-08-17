@@ -299,7 +299,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapActions, mapState } from "vuex";
 import Food from "@/components/payzappcomponent/Screen/CashBackList/Food";
 import Grocries from "@/components/payzappcomponent/Screen/CashBackList/Grocries";
 import Bill from "@/components/payzappcomponent/Screen/CashBackList/Bill";
@@ -316,20 +316,11 @@ import global from "../../mixin/global.js";
 // Mixin end
 
 export default {
-  mixins: [global],
-  components: {
-    Entertainment,
-    Food,
-    Grocries,
-    Bill,
-    Services,
-    vuescrollCarousel,
-    Swiper,
-    SwiperSlide
-  },
+  mixins:[global],
+  components: {Entertainment, Food, Grocries, Bill, Services, vuescrollCarousel, Swiper, SwiperSlide},
   data() {
     return {
-      anima_class: null,
+      anima_class : null,
       selected_index: 0,
       selected_width: 110,
       swiperOptions1: {
@@ -351,12 +342,8 @@ export default {
       return this.$refs.swip2.$swiper;
     },
     getStyleBar() {
-      var value = this.selected_index * this.selected_width;
-      return {
-        width: this.selected_width.toString() + "px !important",
-        transform: "translate3d(" + value.toString() + "px, 0px, 0px)",
-        transition: "all .2s linear"
-      };
+      var value = this.selected_index * this.selected_width
+      return { 'width': this.selected_width.toString() + 'px !important', 'transform': 'translate3d(' + value.toString() +'px, 0px, 0px)', 'transition': 'all .2s linear'}
     }
   },
   mounted() {
@@ -369,28 +356,29 @@ export default {
   },
   methods: {
     onThumbnailChange(val) {
-      this.selected_index = val.activeIndex;
+      this.selected_index = val.activeIndex
       // this.selected_width = val.width
-      this.$refs.swip1.$swiper.slideTo(val.activeIndex);
-      this.$nextTick(() => {
-        switch (this.selected_index) {
-          case 0: {
-            this.$refs.firstTab.scrollIntoView({ behavior: "smooth" });
-            break;
-          }
-          case 1: {
-            this.$refs.secondTab.scrollIntoView({ behavior: "smooth" });
-            break;
-          }
-        }
-        // this.$refs.topView.scrollIntoView({ behavior: "smooth" });
-      });
+      this.$refs.swip1.$swiper.slideTo(val.activeIndex)
+      // this.$nextTick(() => {
+      //   switch (this.selected_index) {
+      //     case 0: {
+      //       this.$refs.firstTab.scrollIntoView({ behavior: "smooth" });
+      //       this.$refs.topView.scrollIntoView({ behavior: "smooth" });
+      //       break;
+      //     }
+      //     case 1: {
+      //       this.$refs.secondTab.scrollIntoView({ behavior: "smooth" });
+      //       break;
+      //     }
+      //   }
+      // this.$refs.topView.scrollIntoView({ behavior: "smooth" });
+      // });
     },
     changeOnButtonClick(val) {
-      console.log("val",val);
       this.selected_index = val;
       this.$refs.swip2.$swiper.slideTo(val);
-    }
+    },
+    ...mapActions("payzappcampaign", ["increaseIndex"])
   }
 };
 </script>
