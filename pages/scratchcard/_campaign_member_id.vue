@@ -390,7 +390,6 @@ export default {
     opacity: 1;
   }
 }
-
 @keyframes ZoomOut {
   0% {
     transform: scale(400);
