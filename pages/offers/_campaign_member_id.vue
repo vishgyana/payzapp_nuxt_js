@@ -340,19 +340,20 @@ export default {
       this.selected_index = val.activeIndex
       // this.selected_width = val.width
       this.$refs.swip1.$swiper.slideTo(val.activeIndex)
-      this.$nextTick(() => {
-        switch (this.selected_index) {
-          case 0: {
-            this.$refs.firstTab.scrollIntoView({ behavior: "smooth" });
-            break;
-          }
-          case 1: {
-            this.$refs.secondTab.scrollIntoView({ behavior: "smooth" });
-            break;
-          }
-        }
+      // this.$nextTick(() => {
+      //   switch (this.selected_index) {
+      //     case 0: {
+      //       this.$refs.firstTab.scrollIntoView({ behavior: "smooth" });
+      //       this.$refs.topView.scrollIntoView({ behavior: "smooth" });
+      //       break;
+      //     }
+      //     case 1: {
+      //       this.$refs.secondTab.scrollIntoView({ behavior: "smooth" });
+      //       break;
+      //     }
+      //   }
         // this.$refs.topView.scrollIntoView({ behavior: "smooth" });
-      });
+      // });
     },
     changeOnButtonClick(val) {
       this.selected_index = val;

@@ -228,7 +228,7 @@
   </div>
 </template>
 <script>
-import { mapActions, mapState } from "vuex";
+import  { mapActions, mapState } from "vuex";
 import Vuescratchcard from "@/components/Vuescratchcard/index.vue";
 
 export default {
@@ -269,7 +269,7 @@ export default {
       );
 
       this.$anime
-        .timeline({ loop: true })
+        .timeline({ loop: 2 })
 
         .add({
           targets: ".ml10 .letter",
