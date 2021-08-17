@@ -190,7 +190,7 @@
         </svg>
       </div>
     </div>
-    <div class="grid h-90 grid-cols-12">
+    <div class="grid h-90 grid-cols">
       <div class="main_content">
         <h2 class="ml10 text-center font-bold text-3xl mb-2">
             <span class="text-wrapper">
