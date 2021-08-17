@@ -356,3 +356,49 @@ export default {
   }
 };
 </script>
+<<<<<<< HEAD
+=======
+
+<style scoped>
+.circle_block {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  background-color: #0076ff;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 50px;
+  opacity: 0;
+}
+
+.button-zoom-in {
+  animation: ZoomIn 0.25s ease-in-out forwards;
+}
+
+.button-zoom-out {
+  animation: ZoomOut 0.25s ease-in-out forwards;
+}
+@keyframes ZoomIn {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(400);
+    opacity: 1;
+  }
+}
+@keyframes ZoomOut {
+  0% {
+    transform: scale(400);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 1;
+  }
+}
+</style>
+>>>>>>> 690e3ca55c1f8720ca6de788914e80731f271ea4

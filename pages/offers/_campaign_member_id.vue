@@ -190,7 +190,7 @@
         </svg>
       </div>
     </div>
-    <div class="grid h-90 grid-cols-12">
+    <div  class="grid grid-cols-1">
       <div class="content_block">
         <p
           data-aos="fade"
@@ -203,54 +203,44 @@
           & Rs 25,000 a year
         </p>
 
-        <div
-          class="tab_block"
-          data-aos="fade"
-          data-aos-easing="ease-in-out"
-          data-aos-duration="300"
-          data-aos-delay="1600"
-        >
+        <div class="tab_block">
           <swiper ref="swip1" class="nav nav-tabs" :options="swiperOptions1">
             <swiper-slide>
               <div class="nav-item" @click="changeOnButtonClick(0)">
-                <a href="#" class="nav-link">One</a>
+                <a class="nav-link">All</a>
               </div>
             </swiper-slide>
             <swiper-slide>
               <div class="nav-item" @click="changeOnButtonClick(1)">
-                <a href="#" class="nav-link">Two</a>
+                <a class="nav-link">Food Delivery</a>
               </div>
             </swiper-slide>
             <swiper-slide>
               <div class="nav-item" @click="changeOnButtonClick(2)">
-                <a href="#" class="nav-link">Three</a>
+                <a class="nav-link">Groceries</a>
               </div>
             </swiper-slide>
             <swiper-slide>
               <div class="nav-item" @click="changeOnButtonClick(3)">
-                <a href="#" class="nav-link">Four</a>
+                <a class="nav-link">Bills & Payments</a>
               </div>
             </swiper-slide>
             <swiper-slide>
               <div class="nav-item" @click="changeOnButtonClick(4)">
-                <a href="#" class="nav-link">Five</a>
+                <a class="nav-link">Service</a>
               </div>
             </swiper-slide>
             <swiper-slide>
               <div class="nav-item" @click="changeOnButtonClick(5)">
-                <a href="#" class="nav-link">Six</a>
+                <a class="nav-link">Entertainment</a>
               </div>
             </swiper-slide>
             <div class="tab-active-bar" :style="getStyleBar"></div>
           </swiper>
 
-          <swiper
-            ref="swip2"
-            :options="swiperOptions2"
-            @slideChange="onThumbnailChange"
-          >
+          <swiper ref="swip2" :options="swiperOptions2" @slideChange="onThumbnailChange" class="tab-content">
             <swiper-slide>
-              <div ref="firstTab" class="tab-content">
+              <div ref="firstTab" class="tab-content1">
                 <Food />
                 <Grocries />
                 <Bill />
@@ -259,41 +249,38 @@
               </div>
             </swiper-slide>
             <swiper-slide>
-              <div ref="secondTab" class="tab-content">
-                <Food />
+              <div ref="secondTab" class="tab-content1">
+                <Food/>
               </div>
             </swiper-slide>
             <swiper-slide>
-              <div ref="thirdTab" class="tab-content">
-                <Grocries />
+              <div ref="thirdTab" class="tab-content1">
+                <Grocries/>
               </div>
             </swiper-slide>
             <swiper-slide>
-              <div ref="fourthTab" class="tab-content">
-                <Bill />
+              <div ref="fourthTab" class="tab-content1">
+                <Bill/>
               </div>
             </swiper-slide>
             <swiper-slide>
-              <div ref="fifthTab" class="tab-content">
-                <Services />
+              <div ref="fifthTab" class="tab-content1">
+                <Services/>
               </div>
             </swiper-slide>
             <swiper-slide>
-              <div ref="sixthTab" class="tab-content">
-                <Entertainment />
+              <div ref="sixthTab" class="tab-content1">
+                <Entertainment/>
               </div>
             </swiper-slide>
           </swiper>
         </div>
       </div>
     </div>
-    <div
-      class="bottom_button"
-      data-aos="fade"
-      data-aos-easing="ease-in-out"
-      data-aos-duration="300"
-      data-aos-delay="100"
-    >
+    <div class="bottom_button" data-aos="fade"
+         data-aos-easing='ease-in-out'
+         data-aos-duration=""
+         data-aos-delay='100'>
       <button @click="increaseIndex">
         <img src="@/assets/img/appstore.svg" class="img-fluid" /> Download
         Payzapp
@@ -336,12 +323,8 @@ export default {
       return this.$refs.swip2.$swiper;
     },
     getStyleBar() {
-      var value = this.selected_index * this.selected_width;
-      return {
-        width: this.selected_width.toString() + "px !important",
-        transform: "translate3d(" + value.toString() + "px, 0px, 0px)",
-        transition: "all .2s linear"
-      };
+      var value = this.selected_index * this.selected_width
+      return { 'width': this.selected_width.toString() + 'px', 'transform': 'translate3d(' + value.toString() +'px, 0px, 0px)', 'transition': 'all .2s linear'}
     }
   },
   mounted() {
@@ -394,7 +377,7 @@ export default {
   position: absolute;
   left: -23px;
   height: 100%;
-  width: 115px;
+  width: 115px !important;
   margin-left: 25px;
   /*border-radius: 2px;*/
   transition-property: all;
@@ -403,6 +386,6 @@ export default {
   box-shadow: -6px -6px 16px #ffffff, 3px 3px 16px rgb(29 134 255 / 30%);
   border-radius: 8px;
   color: #fff;
-  z-index: -1;
+  z-index:1;
 }
 </style>
