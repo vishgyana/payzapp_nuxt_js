@@ -194,17 +194,16 @@
       <div class="main_content">
         <div v-if="isShowsurprisesection">
           <h2 class="ml10 text-center font-bold text-3xl mb-2">
-          <span class="text-wrapper">
-            <span class="letters"
-                  data-aos="fade-in"
-                  data-aos-easing="ease-in-out"
-                  data-aos-duration="0"
-                  data-aos-delay="1600">Surprise!</span>
-          </span>
+            <span class="text-wrapper">
+              <span v-show="issurpriseVisibles" class="letters">Surprise!</span>
+            </span>
           </h2>
-          <p
-            class="text-center font-normal text-base mb-8">
-            Scratch the card to unveil them.
+          <p class="text-center font-normal text-base mb-8 ml11">
+            <span class="text-wrapper">
+              <span v-show="issurpriseBelowtext" class="letters">
+                Scratch the card to unveil them.</span
+              >
+            </span>
           </p>
         </div>
         <Vuescratchcard
@@ -231,11 +230,18 @@
 import { mapActions, mapState } from "vuex";
 import Vuescratchcard from "@/components/Vuescratchcard/index.vue";
 
+// Mixin start
+import global from "../../mixin/global.js";
+// Mixin end
+
 export default {
+  mixins: [global],
   components: { Vuescratchcard },
   data() {
     return {
-      show_data: true
+      show_data: true,
+      issurpriseVisibles: false,
+      issurpriseBelowtext: false
     };
   },
   computed: {
@@ -259,35 +265,49 @@ export default {
     clickCall() {
       this.navigateNextpage();
     },
+    callalert() {
+      alert("alert");
+    },
 
-    animeanimate() {
+    surpriseAnimation() {
       // Wrap every letter in a span
       var textWrapper = document.querySelector(".ml10 .letters");
       textWrapper.innerHTML = textWrapper.textContent.replace(
         /\S/g,
         "<span class='letter'>$&</span>"
       );
-
-      this.$anime
-        .timeline({ loop: true })
-
-        .add({
-          targets: ".ml10 .letter",
-          rotateY: [-90, 0],
-          duration: 1300,
-          delay: (el, i) => 45 * i
-        })
-        .add({
-          targets: ".ml10",
-          opacity: 0,
-          duration: 1000,
-          easing: "easeOutExpo",
-          delay: 1000
-        });
+      this.$anime.timeline({ loop: false }).add({
+        targets: ".ml10 .letter",
+        rotateY: [-90, 0],
+        duration: 1500,
+        delay: (el, i) => 45 * i
+      });
+    },
+    surpriseBelowtextAnimation() {
+      // Wrap every letter in a span
+      var textWrapper = document.querySelector(".ml11 .letters");
+      textWrapper.innerHTML = textWrapper.textContent.replace(
+        /\S/g,
+        "<span class='letter'>$&</span>"
+      );
+      this.$anime.timeline({ loop: false }).add({
+        targets: ".ml11 .letter",
+        rotateY: [-90, 0],
+        duration: 1500,
+        delay: (el, i) => 45 * i
+      });
     }
   },
   mounted() {
-    this.animeanimate();
+    setTimeout(() => {
+      this.surpriseAnimation();
+      this.issurpriseVisibles = true;
+    }, 1600);
+
+    setTimeout(() => {
+      this.surpriseBelowtextAnimation();
+      this.issurpriseBelowtext = true;
+    }, 2400);
   }
 };
 </script>

@@ -971,4 +971,22 @@ canvas {
 }
 /* Ripple Effect CSS End */
 
+.ml11 {
+  position: relative;
+}
+
+.ml11 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml11 .letter {
+  display: inline-block;
+  line-height: 1em;
+  transform-origin: 0 0;
+}
 
