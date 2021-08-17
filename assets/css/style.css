@@ -1,33 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   background-image: url("../../assets/img/Background.svg");
   background-repeat: no-repeat;
   /*background-attachment: fixed;*/
-  top:0;
-  left:0;
-  bottom:0;
+  top: 0;
+  left: 0;
+  bottom: 0;
   width: 100%;
   height: 2000px;
   /*position:fixed;*/
-  background-position:50% 0%;
+  background-position: 50% 0%;
   /*overflow:hidden;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  z-index:9999;
-  background-color: #FAFAFA;
+  z-index: 9999;
+  background-color: #fafafa;
 }
 @media (max-width: 767px) {
-  body{
+  body {
     background-attachment: initial;
   }
 }
 html {
-  height:100vh;
-  width:100%;
-  overflow:hidden;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
 }
 button {
   cursor: pointer;
@@ -98,7 +98,7 @@ a:focus {
   background: #fafafa;
   box-shadow: inset -5px -5px 8px #ffffff, inset 5px 5px 8px rgba(0, 0, 0, 0.03);
   border-radius: 16px;
-  width: 100%;;
+  width: 100%;
   float: left;
   padding: 10px;
 }
@@ -325,7 +325,6 @@ a:focus {
   justify-content: center;
   margin: 0 auto 20px auto;
   float: none !important;
-
 }
 #scratchcard {
   color: white;
@@ -348,22 +347,41 @@ a:focus {
   border-radius: 24px;
   position: relative;
 }
-.animation_block
-{
+.animation_block {
   animation: tada-wait2 3.6s linear infinite;
 }
 
 @keyframes tada-wait2 {
-  0% { transform: scale(1) }
-  5.55556% { transform:scale(.9) rotate(-8deg) }
-  11.11111% { transform:scale(.9) rotate(-8deg) }
-  16.66667% { transform:scale(1) rotate(8deg) }
-  22.22222% { transform:scale(1) rotate(-8deg) }
-  27.77778% { transform:scale(1) rotate(8deg) }
-  33.33333% { transform:scale(1) rotate(-8deg) }
-  38.88889% { transform:scale(1) rotate(8deg) }
-  44.44444% { transform:scale(1) rotate(0) }
-  100% { transform:scale(1) rotate(0) }
+  0% {
+    transform: scale(1);
+  }
+  5.55556% {
+    transform: scale(0.9) rotate(-8deg);
+  }
+  11.11111% {
+    transform: scale(0.9) rotate(-8deg);
+  }
+  16.66667% {
+    transform: scale(1) rotate(8deg);
+  }
+  22.22222% {
+    transform: scale(1) rotate(-8deg);
+  }
+  27.77778% {
+    transform: scale(1) rotate(8deg);
+  }
+  33.33333% {
+    transform: scale(1) rotate(-8deg);
+  }
+  38.88889% {
+    transform: scale(1) rotate(8deg);
+  }
+  44.44444% {
+    transform: scale(1) rotate(0);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
 }
 .tab_block {
   width: 100%;
@@ -409,7 +427,7 @@ a:focus {
   line-height: 20px;
   font-weight: 600;
   padding: 6.5px 16px;
-  border:none;
+  border: none;
 }
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
@@ -422,7 +440,7 @@ a:focus {
 .tab-content {
   width: 100%;
   float: left;
-  height:100%;
+  height: 100%;
   background: #fafafa;
   box-shadow: inset -5px -5px 8px #ffffff, inset 5px 5px 8px rgba(0, 0, 0, 0.03);
   border-radius: 16px;
@@ -631,10 +649,9 @@ a:focus {
   margin-bottom: 8px;
   margin-top: 0;
 }
-.caskback_img
-{
-  width:100%;
-  float:left;
+.caskback_img {
+  width: 100%;
+  float: left;
 }
 .caskback_img svg {
   float: left;
@@ -678,7 +695,7 @@ a:focus {
 canvas {
   position: absolute;
   top: 0;
-  width:100%;
+  width: 100%;
   left: 0;
   height: 100%;
 }
@@ -729,27 +746,27 @@ canvas {
   }
 }
 .shimmer div:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100px;
   width: 70px;
   height: 100%;
-  background: rgba(255,255,255, 0.3);
+  background: rgba(255, 255, 255, 0.3);
   transform: skewX(-30deg);
   animation-name: slide;
   animation-duration: 1s;
-  animation-delay: .5s;
+  animation-delay: 0.5s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-direction: alternate;
   background: linear-gradient(
-          to right,
-          rgba(255, 255, 255, 0.13) 0%,
-          rgba(255, 255, 255, 0.53) 77%,
-          rgba(255, 255, 255, 0.53) 92%,
-          rgba(255, 255, 255, 0.0) 100%
-  )
+    to right,
+    rgba(255, 255, 255, 0.13) 0%,
+    rgba(255, 255, 255, 0.53) 77%,
+    rgba(255, 255, 255, 0.53) 92%,
+    rgba(255, 255, 255, 0) 100%
+  );
 }
 @keyframes slide {
   0% {
@@ -771,11 +788,10 @@ canvas {
     top: 0;
   }
 }
-.main_container
-{
-  width:100%;
-  height:100%;
-  padding:0 15px;
+.main_container {
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
 }
 .main_content h2 svg {
   display: block;
@@ -783,7 +799,7 @@ canvas {
   font-weight: 700;
   font-size: 36px;
   line-height: 50px;
-  margin:auto;
+  margin: auto;
 }
 /*.letter
 {
@@ -860,8 +876,7 @@ canvas {
 {
   color:#fff;
 } */
-.swiper-slide
-{
+.swiper-slide {
 }
 
 .ml10 {
@@ -917,3 +932,47 @@ canvas {
   display: inline-block;
   line-height: 1em;
 }
+
+/* Ripple Effect CSS Start */
+.circle_block {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  background-color: #0076ff;
+  border-radius: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 50px;
+  opacity: 0;
+}
+
+.button-zoom-in {
+  animation: ZoomIn 0.25s ease-in-out forwards;
+}
+
+.button-zoom-out {
+  animation: ZoomOut 0.25s ease-in-out forwards;
+}
+@keyframes ZoomIn {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(400);
+    opacity: 1;
+  }
+}
+
+@keyframes ZoomOut {
+  0% {
+    transform: scale(400);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 1;
+  }
+}
+/* Ripple Effect CSS End */

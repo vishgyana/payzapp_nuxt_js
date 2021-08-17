@@ -190,21 +190,26 @@
         </svg>
       </div>
     </div>
-    <div  class="grid h-90 grid-cols-12">
+    <div class="grid h-90 grid-cols-12">
       <div class="content_block">
-        <p data-aos="fade"
-           data-aos-easing='ease-in-out'
-           data-aos-duration="300"
-           data-aos-delay='800'>
-          Get Cashback's worth upto <br/>
-          Rs 2,500 per month <br/>
+        <p
+          data-aos="fade"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="300"
+          data-aos-delay="800"
+        >
+          Get Cashback's worth upto <br />
+          Rs 2,500 per month <br />
           & Rs 25,000 a year
         </p>
 
-        <div class="tab_block" data-aos="fade"
-             data-aos-easing='ease-in-out'
-             data-aos-duration="300"
-             data-aos-delay='1600'>
+        <div
+          class="tab_block"
+          data-aos="fade"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="300"
+          data-aos-delay="1600"
+        >
           <swiper ref="swip1" class="nav nav-tabs" :options="swiperOptions1">
             <swiper-slide>
               <div class="nav-item" @click="changeOnButtonClick(0)">
@@ -239,59 +244,67 @@
             <div class="tab-active-bar" :style="getStyleBar"></div>
           </swiper>
 
-          <swiper ref="swip2" :options="swiperOptions2" @slideChange="onThumbnailChange">
+          <swiper
+            ref="swip2"
+            :options="swiperOptions2"
+            @slideChange="onThumbnailChange"
+          >
             <swiper-slide>
               <div ref="firstTab" class="tab-content">
                 <Food />
-                <Grocries/>
-                <Bill/>
-                <Services/>
-                <Entertainment/>
+                <Grocries />
+                <Bill />
+                <Services />
+                <Entertainment />
               </div>
             </swiper-slide>
             <swiper-slide>
               <div ref="secondTab" class="tab-content">
-                <Food/>
+                <Food />
               </div>
             </swiper-slide>
             <swiper-slide>
               <div ref="thirdTab" class="tab-content">
-                <Grocries/>
+                <Grocries />
               </div>
             </swiper-slide>
             <swiper-slide>
               <div ref="fourthTab" class="tab-content">
-                <Bill/>
+                <Bill />
               </div>
             </swiper-slide>
             <swiper-slide>
               <div ref="fifthTab" class="tab-content">
-                <Services/>
+                <Services />
               </div>
             </swiper-slide>
             <swiper-slide>
               <div ref="sixthTab" class="tab-content">
-                <Entertainment/>
+                <Entertainment />
               </div>
             </swiper-slide>
           </swiper>
         </div>
       </div>
     </div>
-    <div class="bottom_button" data-aos="fade"
-         data-aos-easing='ease-in-out'
-         data-aos-duration="300"
-         data-aos-delay='100'>
+    <div
+      class="bottom_button"
+      data-aos="fade"
+      data-aos-easing="ease-in-out"
+      data-aos-duration="300"
+      data-aos-delay="100"
+    >
       <button @click="increaseIndex">
-        <img src="@/assets/img/appstore.svg" class="img-fluid"/> Download
+        <img src="@/assets/img/appstore.svg" class="img-fluid" /> Download
         Payzapp
       </button>
     </div>
+    <div class="circle_block" :class="anima_class"></div>
   </div>
 </template>
 
 <script>
-import {mapActions} from "vuex";
+import { mapActions } from "vuex";
 import Food from "@/components/payzappcomponent/Screen/CashBackList/Food";
 import Grocries from "@/components/payzappcomponent/Screen/CashBackList/Grocries";
 import Bill from "@/components/payzappcomponent/Screen/CashBackList/Bill";
@@ -299,9 +312,10 @@ import Services from "@/components/payzappcomponent/Screen/CashBackList/Services
 import Entertainment from "@/components/payzappcomponent/Screen/CashBackList/Entertainment";
 
 export default {
-  components: {Entertainment, Food, Grocries, Bill, Services},
+  components: { Entertainment, Food, Grocries, Bill, Services },
   data() {
     return {
+      anima_class : null,
       selected_index: 0,
       selected_width: 0,
       swiperOptions1: {
@@ -312,7 +326,7 @@ export default {
       swiperOptions2: {
         slidesPerView: 1
       }
-    }
+    };
   },
   computed: {
     swiperFirst() {
@@ -322,15 +336,27 @@ export default {
       return this.$refs.swip2.$swiper;
     },
     getStyleBar() {
-      var value = this.selected_index * this.selected_width
-      return { 'width': this.selected_width.toString() + 'px !important', 'transform': 'translate3d(' + value.toString() +'px, 0px, 0px)', 'transition': 'all .2s linear'}
+      var value = this.selected_index * this.selected_width;
+      return {
+        width: this.selected_width.toString() + "px !important",
+        transform: "translate3d(" + value.toString() + "px, 0px, 0px)",
+        transition: "all .2s linear"
+      };
     }
+  },
+  mounted() {
+    // Add ripple zoom in
+    this.anima_class = "button-zoom-in";
+    setTimeout(() => {
+      // remove ripple zoom out
+      this.anima_class = "button-zoom-out";
+    }, 300);
   },
   methods: {
     onThumbnailChange(val) {
-      this.selected_index = val.activeIndex
-      this.selected_width = val.width
-      this.$refs.swip1.$swiper.slideTo(val.activeIndex)
+      this.selected_index = val.activeIndex;
+      this.selected_width = val.width;
+      this.$refs.swip1.$swiper.slideTo(val.activeIndex);
       this.$nextTick(() => {
         switch (this.selected_index) {
           case 0: {
@@ -341,26 +367,26 @@ export default {
             this.$refs.secondTab.scrollIntoView({ behavior: "smooth" });
             break;
           }
-
         }
         // this.$refs.topView.scrollIntoView({ behavior: "smooth" });
-      })
+      });
     },
     changeOnButtonClick(val) {
-      this.selected_index = val
-      this.$refs.swip2.$swiper.slideTo(val)
+      this.selected_index = val;
+      this.$refs.swip2.$swiper.slideTo(val);
     },
     ...mapActions("payzappcampaign", ["increaseIndex"])
-  },
+  }
 };
 </script>
 
 <style scoped>
 .active {
-  -webkit-transition: width .1s linear 0s, -webkit-transform .1s linear 0s !important;
-  transition: width .1s linear 0s, -webkit-transform .1s linear 0s !important;
-  transition: width .1s linear 0s, transform .1s linear 0s !important;
-  transition: width .1s linear 0s, transform .1s linear 0s, -webkit-transform .1s linear 0s !important;
+  -webkit-transition: width 0.1s linear 0s, -webkit-transform 0.1s linear 0s !important;
+  transition: width 0.1s linear 0s, -webkit-transform 0.1s linear 0s !important;
+  transition: width 0.1s linear 0s, transform 0.1s linear 0s !important;
+  transition: width 0.1s linear 0s, transform 0.1s linear 0s,
+    -webkit-transform 0.1s linear 0s !important;
 }
 
 .tab-active-bar {
@@ -377,7 +403,6 @@ export default {
   box-shadow: -6px -6px 16px #ffffff, 3px 3px 16px rgb(29 134 255 / 30%);
   border-radius: 8px;
   color: #fff;
-  z-index:-1;
+  z-index: -1;
 }
-
 </style>
