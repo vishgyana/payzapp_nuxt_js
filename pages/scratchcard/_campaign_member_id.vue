@@ -240,7 +240,12 @@
 import { mapActions, mapState } from "vuex";
 import Vuescratchcard from "@/components/Vuescratchcard/index.vue";
 
+// Mixin start
+import global from "../../mixin/global.js";
+// Mixin end
+
 export default {
+  mixins: [global],
   components: { Vuescratchcard },
   data() {
     return {
