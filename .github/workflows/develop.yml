@@ -15,6 +15,7 @@ jobs:
       - name: Install Packages & Setup
         run: |
           cd develop/
+          npm install yarn
           yarn install
       
       - name: Build
