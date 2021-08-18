@@ -881,10 +881,10 @@ canvas {
   -webkit-animation-delay: 0.45s;
   animation-delay: 0.45s;
 }*/
-.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus
+/* .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus
 {
   color:#fff;
-}
+} */
 
 .ml10 {
   position: relative;
