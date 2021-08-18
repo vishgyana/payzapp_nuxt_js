@@ -5,7 +5,7 @@
         <svg
           data-aos="fade"
           data-aos-easing="ease-in-out"
-          data-aos-duration="300"
+          data-aos-duration="500"
           data-aos-delay="800"
           width="104"
           height="50"
@@ -111,7 +111,7 @@
         <svg
           data-aos="fade"
           data-aos-easing="ease-in-out"
-          data-aos-duration="300"
+          data-aos-duration="500"
           data-aos-delay="800"
           width="56"
           height="56"
@@ -190,15 +190,16 @@
         </svg>
       </div>
     </div>
-    <div class="grid grid-cols-none items-center h-screen flex">
-      <div class="main_content">
+    <div class="grid grid-cols-none items-center h-screen flex absolute top-0 w-full">
+      <div class="main_content w-full float-left">
         <div v-if="isShowsurprisesection">
-          <h2 class="ml10 text-center font-bold text-3xl mb-2">
-            <span class="text-wrapper">
-              <span v-show="issurpriseVisibles" class="letters">Surprise!</span>
+          <h1 class="ml8 text-center font-bold text-3xl w-full float-left text-center" v-show="issurpriseVisibles">
+            <span class="letters-container">
+              <span class="letters letters-left">Surprise</span>
+              <span class="letters bang">!</span>
             </span>
-          </h2>
-          <p class="text-center font-normal text-base mb-8 ml11">
+          </h1>
+          <p class="text-center font-normal text-base mb-6 ml11 w-full float-left">
             <span class="text-wrapper">
               <span v-show="issurpriseBelowtext" class="letters">
                 Scratch the card to unveil them.</span
@@ -207,9 +208,9 @@
           </p>
         </div>
         <Vuescratchcard
-          data-aos="fade"
+          data-aos="fade-up"
           data-aos-easing="ease-in-out"
-          data-aos-duration="300"
+          data-aos-duration="800"
           data-aos-delay="3000"
         />
       </div>
@@ -217,9 +218,9 @@
     <div
       v-show="isShowcuriousbutton"
       class="bottom_button"
-      data-aos="fade"
+      data-aos="fade-up"
       data-aos-easing="ease-in-out"
-      data-aos-duration="300"
+      data-aos-duration="800"
       data-aos-delay="100"
     >
       <button @click="clickCall">Curious? Find out how</button>
@@ -228,6 +229,7 @@
 </template>
 <script>
 import { mapActions, mapState } from "vuex";
+import surprise from "@/components/payzappcomponent/Screen/surprise";
 import Vuescratchcard from "@/components/Vuescratchcard/index.vue";
 
 // Mixin start
@@ -236,7 +238,7 @@ import global from "../../mixin/global.js";
 
 export default {
   mixins: [global],
-  components: { Vuescratchcard },
+  components: { Vuescratchcard, surprise },
   data() {
     return {
       show_data: true,
@@ -270,18 +272,20 @@ export default {
     },
 
     surpriseAnimation() {
-      // Wrap every letter in a span
-      var textWrapper = document.querySelector(".ml10 .letters");
-      textWrapper.innerHTML = textWrapper.textContent.replace(
-        /\S/g,
-        "<span class='letter'>$&</span>"
-      );
-      this.$anime.timeline({ loop: false }).add({
-        targets: ".ml10 .letter",
-        rotateY: [-90, 0],
-        duration: 1500,
-        delay: (el, i) => 45 * i
-      });
+      this.$anime.timeline({ loop: false })
+        .add({
+        targets: '.ml8 .letters-left',
+        scale: [0, 1],
+        duration: 1200,
+        offset: '-=550',
+      }).add({
+        targets: '.ml8 .bang',
+        scale: [0, 1],
+        rotateZ: [45, 15],
+        duration: 1200,
+        offset: '-=1000',
+        delay: 10
+      })
     },
     surpriseBelowtextAnimation() {
       // Wrap every letter in a span
@@ -302,12 +306,12 @@ export default {
     setTimeout(() => {
       this.surpriseAnimation();
       this.issurpriseVisibles = true;
-    }, 1600);
+    }, 1200);
 
     setTimeout(() => {
       this.surpriseBelowtextAnimation();
       this.issurpriseBelowtext = true;
-    }, 2400);
+    }, 2000);
   }
 };
 </script>
