@@ -5,7 +5,7 @@
         <svg
           data-aos="fade"
           data-aos-easing="ease-in-out"
-          data-aos-duration="500"
+          data-aos-duration="300"
           data-aos-delay="800"
           width="104"
           height="50"
@@ -111,7 +111,7 @@
         <svg
           data-aos="fade"
           data-aos-easing="ease-in-out"
-          data-aos-duration="500"
+          data-aos-duration="300"
           data-aos-delay="800"
           width="56"
           height="56"
@@ -220,7 +220,7 @@
       class="bottom_button"
       data-aos="fade-up"
       data-aos-easing="ease-in-out"
-      data-aos-duration="800"
+      data-aos-duration="300"
       data-aos-delay="100"
     >
       <button @click="clickCall">Curious? Find out how</button>
@@ -306,12 +306,12 @@ export default {
     setTimeout(() => {
       this.surpriseAnimation();
       this.issurpriseVisibles = true;
-    }, 1200);
+    }, 1600);
 
     setTimeout(() => {
       this.surpriseBelowtextAnimation();
       this.issurpriseBelowtext = true;
-    }, 2000);
+    }, 2400);
   }
 };
 </script>
