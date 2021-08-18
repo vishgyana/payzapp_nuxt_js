@@ -193,79 +193,113 @@
     <div class="items-center h-screen flex">
       <div class="content_block">
         <p>
-          Get Cashback's worth upto <br/>
-          Rs 2,500 per month <br/>
+          Get Cashback's worth upto <br />
+          Rs 2,500 per month <br />
           & Rs 25,000 a year
         </p>
 
-        <div class="tab_block">
+        <div class="tab_block" id="tab_section">
           <swiper ref="swip1" class="nav nav-tabs" :options="swiperOptions1">
             <swiper-slide>
               <div class="nav-item" @click="changeOnButtonClick(0)">
-                <a class="nav-link">All</a>
+                <a
+                  class="nav-link"
+                  :class="[selected_index === 0 ? 'activestate' : '']"
+                  id="all_value"
+                  >All</a
+                >
               </div>
             </swiper-slide>
             <swiper-slide>
               <div class="nav-item" @click="changeOnButtonClick(1)">
-                <a class="nav-link">Food Delivery</a>
+                <a
+                  class="nav-link"
+                  :class="[selected_index === 1 ? 'activestate' : '']"
+                  id="food_delivery_value"
+                  >Food Delivery</a
+                >
               </div>
             </swiper-slide>
             <swiper-slide>
               <div class="nav-item" @click="changeOnButtonClick(2)">
-                <a class="nav-link">Groceries</a>
+                <a
+                  class="nav-link"
+                  :class="[selected_index === 2 ? 'activestate' : '']"
+                  id="groceries_value"
+                  >Groceries</a
+                >
               </div>
             </swiper-slide>
             <swiper-slide>
               <div class="nav-item" @click="changeOnButtonClick(3)">
-                <a class="nav-link">Bills & Payments</a>
+                <a
+                  class="nav-link"
+                  :class="[selected_index === 3 ? 'activestate' : '']"
+                  id="billspayments_value"
+                  >Bills & Payments</a
+                >
               </div>
             </swiper-slide>
             <swiper-slide>
               <div class="nav-item" @click="changeOnButtonClick(4)">
-                <a class="nav-link">Service</a>
+                <a
+                  class="nav-link"
+                  :class="[selected_index === 4 ? 'activestate' : '']"
+                  id="service_value"
+                  >Service</a
+                >
               </div>
             </swiper-slide>
             <swiper-slide>
               <div class="nav-item" @click="changeOnButtonClick(5)">
-                <a class="nav-link">Entertainment</a>
+                <a
+                  class="nav-link"
+                  :class="[selected_index === 5 ? 'activestate' : '']"
+                  id="entertainment_value"
+                  >Entertainment</a
+                >
               </div>
             </swiper-slide>
             <div class="tab-active-bar" :style="getStyleBar"></div>
           </swiper>
 
-          <swiper ref="swip2" :options="swiperOptions2" @slideChange="onThumbnailChange">
+          <swiper
+            ref="swip2"
+            :options="swiperOptions2"
+            @slideChange="onThumbnailChange"
+          >
             <swiper-slide>
               <div ref="firstTab" class="tab-content">
                 <Food />
-                <Grocries/>
-                <Bill/>
-                <Services/>
-                <Entertainment/>
+                <Grocries />
+                <Bill />
+                <Services />
+                <Entertainment />
               </div>
             </swiper-slide>
             <swiper-slide>
               <div ref="secondTab" class="tab-content">
-                <Food/>
+                <Food />
               </div>
             </swiper-slide>
             <swiper-slide>
               <div ref="thirdTab" class="tab-content">
-                <Grocries/>
+                <Grocries />
               </div>
             </swiper-slide>
             <swiper-slide>
               <div ref="fourthTab" class="tab-content">
-                <Bill/>
+                <Bill />
               </div>
             </swiper-slide>
             <swiper-slide>
               <div ref="fifthTab" class="tab-content">
-                <Services/>
+                <Services />
               </div>
             </swiper-slide>
             <swiper-slide>
               <div ref="sixthTab" class="tab-content">
-                <Entertainment/>
+                <Entertainment />
               </div>
             </swiper-slide>
           </swiper>
@@ -316,13 +350,22 @@ import global from "../../mixin/global.js";
 // Mixin end
 
 export default {
-  mixins:[global],
-  components: {Entertainment, Food, Grocries, Bill, Services, vuescrollCarousel, Swiper, SwiperSlide},
+  mixins: [global],
+  components: {
+    Entertainment,
+    Food,
+    Grocries,
+    Bill,
+    Services,
+    vuescrollCarousel,
+    Swiper,
+    SwiperSlide
+  },
   data() {
     return {
-      anima_class : null,
+      anima_class: null,
       selected_index: 0,
-      selected_width: 110,
+      // selected_width: 110,
       swiperOptions1: {
         slidesPerView: 3,
         centeredSlides: true,
@@ -342,8 +385,60 @@ export default {
       return this.$refs.swip2.$swiper;
     },
     getStyleBar() {
-      var value = this.selected_index * this.selected_width
-      return { 'width': this.selected_width.toString() + 'px !important', 'transform': 'translate3d(' + value.toString() +'px, 0px, 0px)', 'transition': 'all .2s linear'}
+      let presetValue = [
+        {
+          id: "all_value",
+          width: 50,
+          left: 37
+        },
+        {
+          id: "food_delivery_value",
+          width: 126,
+          left: 122
+        },
+        {
+          id: "groceries_value",
+          width: 80,
+          left: 270
+        },
+        {
+          id: "billspayments_value",
+          width: 132,
+          left: 380
+        },
+        {
+          id: "service_value",
+          width: 81,
+          left: 520
+        },
+        {
+          id: "entertainment_value",
+          width: 115,
+          left: 630
+        }
+      ];
+
+      var Width = null;
+      var Left = null;
+
+      if (
+        document.querySelector(`#${presetValue[this.selected_index].id}`) ===
+        null
+      ) {
+        Width = presetValue[this.selected_index].width;
+        Left = presetValue[this.selected_index].left;
+      } else {
+        Width = document.querySelector(
+          `#${presetValue[this.selected_index].id}`
+        ).offsetWidth;
+        Left = presetValue[this.selected_index].left;
+      }
+
+      return {
+        width: Width + "px !important",
+        transform: "translate3d(" + Left + "px, 0px, 0px)",
+        transition: "all .2s linear"
+      };
     }
   },
   mounted() {
@@ -355,10 +450,33 @@ export default {
     }, 300);
   },
   methods: {
+    getPositionAtCenter(element) {
+      if (element !== null) {
+        const { top, left, width, height } = element.getBoundingClientRect();
+        return {
+          x: left + width / 2,
+          y: top + height / 2
+        };
+      } else {
+        return {
+          x: 0,
+          y: 0
+        };
+      }
+    },
+    getDistanceBetweenElements(a, b) {
+      if (a !== null && b !== null) {
+        const aPosition = this.getPositionAtCenter(a);
+        const bPosition = this.getPositionAtCenter(b);
+        return Math.hypot(aPosition.x - bPosition.x, aPosition.y - bPosition.y);
+      } else {
+        return 37;
+      }
+    },
     onThumbnailChange(val) {
-      this.selected_index = val.activeIndex
+      this.selected_index = val.activeIndex;
       // this.selected_width = val.width
-      this.$refs.swip1.$swiper.slideTo(val.activeIndex)
+      this.$refs.swip1.$swiper.slideTo(val.activeIndex);
       // this.$nextTick(() => {
       //   switch (this.selected_index) {
       //     case 0: {
@@ -375,6 +493,7 @@ export default {
       // });
     },
     changeOnButtonClick(val) {
+      console.log("this.$refs.swip1", this.$refs.swip1);
       this.selected_index = val;
       this.$refs.swip2.$swiper.slideTo(val);
     },
@@ -389,7 +508,7 @@ export default {
   transition: width 0.1s linear 0s, -webkit-transform 0.1s linear 0s !important;
   transition: width 0.1s linear 0s, transform 0.1s linear 0s !important;
   transition: width 0.1s linear 0s, transform 0.1s linear 0s,
-  -webkit-transform 0.1s linear 0s !important;
+    -webkit-transform 0.1s linear 0s !important;
 }
 
 .tab-active-bar {
@@ -398,7 +517,6 @@ export default {
   left: -23px;
   height: 100%;
   width: 115px;
-  margin-left: 25px;
   /*border-radius: 2px;*/
   transition-property: all;
   background: #1d86ff;
