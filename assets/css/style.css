@@ -412,7 +412,8 @@ a:focus {
   -webkit-overflow-scrolling: touch;
   border-bottom: none;
   margin-bottom: 0;
-padding-bottom: 15px !important;
+  padding-bottom: 24px !important;
+  margin-top:24px;
 }
 .nav-tabs li {
   margin-right: 20px;

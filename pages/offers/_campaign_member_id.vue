@@ -192,7 +192,10 @@
     </div>
     <div class="items-center h-screen flex absolute top-0 w-full">
       <div class="content_block">
-        <p>
+        <p  data-aos="fade"
+            data-aos-easing="ease-in-out"
+            data-aos-duration="500"
+            data-aos-delay="1600">
           Get Cashback's worth upto <br />
           Rs 2,500 per month <br />
           & Rs 25,000 a year
@@ -345,6 +348,17 @@ import global from "../../mixin/global.js";
 
 export default {
   mixins: [global],
+  transition: {
+    afterEnter(el) {
+
+      this.anima_class = "button-zoom-in";
+
+      setTimeout(() => {
+        alert("Haii");
+        this.anima_class = "button-zoom-out";
+      }, 300);
+    }
+  },
   components: {
     Entertainment,
     Food,
@@ -372,6 +386,7 @@ export default {
   },
   computed: {
     ...mapState("payzappcampaign", ["DeviceOS"]),
+
     swiperFirst() {
       return this.$refs.swip1.$swiper;
     },
@@ -435,18 +450,6 @@ export default {
         transitionDuration: "0.1.2s",
       };
     }
-  },
-  created() {
-    // Add ripple zoom in
-    setTimeout(() => {
-      // remove ripple zoom out
-      this.anima_class = "button-zoom-in";
-    }, 1300);
-
-    setTimeout(() => {
-      // remove ripple zoom out
-      this.anima_class = "button-zoom-out";
-    }, 1600);
   },
   methods: {
     getPositionAtCenter(element) {
