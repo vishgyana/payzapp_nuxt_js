@@ -398,6 +398,11 @@ a:focus {
 .tab-content div:nth-child(1) {
   /*overflow-y: inherit;*/
 }
+.swiper-container
+{
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
 .nav-tabs {
   display: -ms-flexbox;
   display: flex;
@@ -407,7 +412,8 @@ a:focus {
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
   border-bottom: none;
-  margin-bottom: 15px;
+  margin-bottom: 0;
+padding-bottom: 15px !important;
 }
 .nav-tabs li {
   margin-right: 20px;
@@ -426,6 +432,13 @@ a:focus {
   line-height: 20px;
   font-weight: 600;
   padding: 6.5px 16px;
+  text-align: center;
+  width: 100%;
+  float: left;
+  background-color: #fff;
+border: 2px solid rgba(255, 255, 255, 0.5);
+box-shadow: -6px -6px 16px #ffffff, 3px 3px 16px rgb(29 134 255 / 30%);
+border-radius: 8px;
 }
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
@@ -991,3 +1004,21 @@ canvas {
   transform-origin: 0 0;
 }
 
+.swiper-slide .nav-item .activestate
+{
+  color:#fff;
+  background: #1d86ff;
+border: 2px solid rgba(255, 255, 255, 0.5);
+box-shadow: -6px -6px 16px #ffffff, 3px 3px 16px rgb(29 134 255 / 30%);
+border-radius: 8px;
+}
+.nav-tabs .swiper-slide
+{
+  width:auto !important;
+  float:left;
+  margin-right:15px;
+}
+
+.swiper-wrapper{
+  padding:0 15px;
+}
