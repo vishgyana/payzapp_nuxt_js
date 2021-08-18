@@ -5,7 +5,7 @@
         <svg
           data-aos="fade"
           data-aos-easing="ease-in-out"
-          data-aos-duration="300"
+          data-aos-duration="500"
           data-aos-delay="800"
           width="104"
           height="50"
@@ -111,7 +111,7 @@
         <svg
           data-aos="fade"
           data-aos-easing="ease-in-out"
-          data-aos-duration="300"
+          data-aos-duration="500"
           data-aos-delay="800"
           width="56"
           height="56"
