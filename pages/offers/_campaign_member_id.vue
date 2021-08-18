@@ -190,7 +190,7 @@
         </svg>
       </div>
     </div>
-    <div class="items-center h-screen flex">
+    <div class="items-center h-screen flex absolute top-0 w-full">
       <div class="content_block">
         <p>
           Get Cashback's worth upto <br />
@@ -201,60 +201,54 @@
         <div class="tab_block" id="tab_section">
           <swiper ref="swip1" class="nav nav-tabs" :options="swiperOptions1">
             <swiper-slide>
-              <div class="nav-item" @click="changeOnButtonClick(0)">
+              <div class="nav-item" @click="changeOnButtonClick(0)" :class="[selected_index === 0 ? 'activestate' : '']">
                 <a
                   class="nav-link"
-                  :class="[selected_index === 0 ? 'activestate' : '']"
                   id="all_value"
                   >All</a
                 >
               </div>
             </swiper-slide>
             <swiper-slide>
-              <div class="nav-item" @click="changeOnButtonClick(1)">
+              <div class="nav-item" @click="changeOnButtonClick(1)" :class="[selected_index === 1 ? 'activestate' : '']">
                 <a
                   class="nav-link"
-                  :class="[selected_index === 1 ? 'activestate' : '']"
                   id="food_delivery_value"
                   >Food Delivery</a
                 >
               </div>
             </swiper-slide>
             <swiper-slide>
-              <div class="nav-item" @click="changeOnButtonClick(2)">
+              <div class="nav-item" @click="changeOnButtonClick(2)" :class="[selected_index === 2 ? 'activestate' : '']">
                 <a
                   class="nav-link"
-                  :class="[selected_index === 2 ? 'activestate' : '']"
                   id="groceries_value"
                   >Groceries</a
                 >
               </div>
             </swiper-slide>
             <swiper-slide>
-              <div class="nav-item" @click="changeOnButtonClick(3)">
+              <div class="nav-item" @click="changeOnButtonClick(3)" :class="[selected_index === 3 ? 'activestate' : '']">
                 <a
                   class="nav-link"
-                  :class="[selected_index === 3 ? 'activestate' : '']"
                   id="billspayments_value"
                   >Bills & Payments</a
                 >
               </div>
             </swiper-slide>
             <swiper-slide>
-              <div class="nav-item" @click="changeOnButtonClick(4)">
+              <div class="nav-item" @click="changeOnButtonClick(4)" :class="[selected_index === 4 ? 'activestate' : '']">
                 <a
                   class="nav-link"
-                  :class="[selected_index === 4 ? 'activestate' : '']"
                   id="service_value"
                   >Service</a
                 >
               </div>
             </swiper-slide>
             <swiper-slide>
-              <div class="nav-item" @click="changeOnButtonClick(5)">
+              <div class="nav-item" @click="changeOnButtonClick(5)" :class="[selected_index === 5 ? 'activestate' : '']">
                 <a
                   class="nav-link"
-                  :class="[selected_index === 5 ? 'activestate' : '']"
                   id="entertainment_value"
                   >Entertainment</a
                 >
@@ -263,7 +257,7 @@
             <div class="tab-active-bar" :style="getStyleBar"></div>
           </swiper>
 
-          <swiper
+          <swiper class="content_tab"
             ref="swip2"
             :options="swiperOptions2"
             @slideChange="onThumbnailChange"
@@ -438,17 +432,21 @@ export default {
         width: Width + "px !important",
         transform: "translate3d(" + Left + "px, 0px, 0px)",
         transitionProperty: "all",
-        transitionDuration: "0"
+        transitionDuration: "0.1.2s",
       };
     }
   },
-  mounted() {
+  created() {
     // Add ripple zoom in
-    this.anima_class = "button-zoom-in";
+    setTimeout(() => {
+      // remove ripple zoom out
+      this.anima_class = "button-zoom-in";
+    }, 1300);
+
     setTimeout(() => {
       // remove ripple zoom out
       this.anima_class = "button-zoom-out";
-    }, 300);
+    }, 1600);
   },
   methods: {
     getPositionAtCenter(element) {
@@ -504,27 +502,6 @@ export default {
 </script>
 
 <style scoped>
-.active {
-  -webkit-transition: width 0.1s linear 0s, -webkit-transform 0.1s linear 0s !important;
-  transition: width 0.1s linear 0s, -webkit-transform 0.1s linear 0s !important;
-  transition: width 0.1s linear 0s, transform 0.1s linear 0s !important;
-  transition: width 0.1s linear 0s, transform 0.1s linear 0s,
-    -webkit-transform 0.1s linear 0s !important;
-}
 
-.tab-active-bar {
-  top: 0;
-  position: absolute;
-  left: 0;
-  height: 100%;
-  width: 115px;
-  /*border-radius: 2px;*/
-  transition-property: all;
-  background: #1d86ff;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  box-shadow: -6px -6px 16px #ffffff, 3px 3px 16px rgb(29 134 255 / 30%);
-  border-radius: 8px;
-  color: #fff;
-  z-index: -1;
-}
+
 </style>
