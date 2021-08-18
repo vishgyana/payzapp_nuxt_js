@@ -388,33 +388,33 @@ export default {
       let presetValue = [
         {
           id: "all_value",
-          width: 50,
-          left: 37
+          width: 53,
+          left: 15
         },
         {
           id: "food_delivery_value",
-          width: 126,
-          left: 122
+          width: 129,
+          left: 83
         },
         {
           id: "groceries_value",
-          width: 80,
-          left: 270
+          width: 101,
+          left: 226
         },
         {
           id: "billspayments_value",
-          width: 132,
-          left: 380
+          width: 148.28,
+          left: 342
         },
         {
           id: "service_value",
-          width: 81,
-          left: 520
+          width: 84.2,
+          left: 505
         },
         {
           id: "entertainment_value",
-          width: 115,
-          left: 630
+          width: 134.53,
+          left: 605
         }
       ];
 
@@ -437,7 +437,8 @@ export default {
       return {
         width: Width + "px !important",
         transform: "translate3d(" + Left + "px, 0px, 0px)",
-        transition: "all .2s linear"
+        transitionProperty: "all",
+        transitionDuration: "0"
       };
     }
   },
@@ -514,7 +515,7 @@ export default {
 .tab-active-bar {
   top: 0;
   position: absolute;
-  left: -23px;
+  left: 0;
   height: 100%;
   width: 115px;
   /*border-radius: 2px;*/
