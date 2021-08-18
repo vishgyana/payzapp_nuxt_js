@@ -1,0 +1,28 @@
+name: Development
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: payzapp_nuxt_dev
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v2
+        with:
+          path: "develop"
+          
+      - name: Install Packages & Setup
+        run: |
+          cd develop/
+          yarn install
+      
+      - name: Build
+        run: |
+          cd develop/
+          yarn build
+          
+      - name: GZip File
+        run: |
+          cd develop/
+          find dist -type f -regex '.*\.\(htm\|html\|txt\|text\|js\|css\)$' -exec gzip -f -k {} \;
