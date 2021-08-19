@@ -16,7 +16,7 @@ import {
     namespaced: true,
     state: () => ({
       campaign_member: {},
-      selectedIndex: 1,
+      selectedIndex: 0,
       InputData: { communication: [], card: "", feedback_description: "" },
       audioMuted: "false",
       feedBack: "false",
@@ -25,7 +25,7 @@ import {
       mainpageRender: "false",
       selectedCampaignoffer: null,
       googleAddress: null,
-      isShowcuriousbutton: false,
+      isShowcuriousbutton: 0,
       isShowsurprisesection: true,
       isAnimationblockadded: false,
       DeviceOS: null,

@@ -146,8 +146,8 @@ export default {
         this.$emit("canvas-arearemoved");
         setTimeout(() => {
           this.updateShoeshimmer(false);
-          this.setShowcuriousbutton(true);
-        }, 1500);
+          this.setShowcuriousbutton(1);
+        }, 2500);
         setTimeout(() => {
           this.setAnimationblockadded(false);
         }, 3600);
