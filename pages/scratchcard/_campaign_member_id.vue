@@ -190,16 +190,23 @@
         </svg>
       </div>
     </div>
-    <div class="grid grid-cols-none items-center h-screen flex absolute top-0 w-full">
+    <div
+      class="grid grid-cols-none items-center h-screen flex absolute top-0 w-full"
+    >
       <div class="main_content w-full float-left">
         <div v-if="isShowsurprisesection">
-          <h1 class="ml8 text-center font-bold text-3xl w-full float-left text-center" v-show="issurpriseVisibles">
+          <h1
+            class="ml8 text-center font-bold text-3xl w-full float-left text-center"
+            v-show="issurpriseVisibles"
+          >
             <span class="letters-container">
               <span class="letters letters-left">Surprise</span>
               <span class="letters bang">!</span>
             </span>
           </h1>
-          <p class="text-center font-normal text-base mb-6 ml11 w-full float-left">
+          <p
+            class="text-center font-normal text-base mb-6 ml11 w-full float-left"
+          >
             <span class="text-wrapper">
               <span v-show="issurpriseBelowtext" class="letters">
                 Scratch the card to unveil them.</span
@@ -208,6 +215,7 @@
           </p>
         </div>
         <Vuescratchcard
+          class=""
           data-aos="fade-up"
           data-aos-easing="ease-in-out"
           data-aos-duration="800"
@@ -216,9 +224,9 @@
       </div>
     </div>
     <div
-      v-show="isShowcuriousbutton"
+      :style="{ opacity: isShowcuriousbutton }"
       class="bottom_button"
-      data-aos="fade-up"
+      data-aos="zoom"
       data-aos-easing="ease-in-out"
       data-aos-duration="300"
       data-aos-delay="100"
@@ -238,6 +246,7 @@ import global from "../../mixin/global.js";
 
 export default {
   mixins: [global],
+  props: ["moveToOffers"],
   components: { Vuescratchcard, surprise },
   data() {
     return {
@@ -265,27 +274,27 @@ export default {
       });
     },
     clickCall() {
-      this.navigateNextpage();
-    },
-    callalert() {
-      alert("alert");
+      this.setShowcuriousbutton(0);
+      this.moveToOffers();
     },
 
     surpriseAnimation() {
-      this.$anime.timeline({ loop: false })
+      this.$anime
+        .timeline({ loop: false })
         .add({
-        targets: '.ml8 .letters-left',
-        scale: [0, 1],
-        duration: 1200,
-        offset: '-=550',
-      }).add({
-        targets: '.ml8 .bang',
-        scale: [0, 1],
-        rotateZ: [45, 15],
-        duration: 1200,
-        offset: '-=1000',
-        delay: 10
-      })
+          targets: ".ml8 .letters-left",
+          scale: [0, 1],
+          duration: 1200,
+          offset: "-=550"
+        })
+        .add({
+          targets: ".ml8 .bang",
+          scale: [0, 1],
+          rotateZ: [45, 15],
+          duration: 1000,
+          offset: "-=1000",
+          delay: 10
+        });
     },
     surpriseBelowtextAnimation() {
       // Wrap every letter in a span
@@ -311,7 +320,7 @@ export default {
     setTimeout(() => {
       this.surpriseBelowtextAnimation();
       this.issurpriseBelowtext = true;
-    }, 2400);
+    }, 3000);
   }
 };
 </script>

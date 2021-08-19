@@ -192,75 +192,87 @@
     </div>
     <div class="items-center h-screen flex absolute top-0 w-full">
       <div class="content_block">
-        <p  data-aos="fade"
-            data-aos-easing="ease-in-out"
-            data-aos-duration="500"
-            data-aos-delay="1600">
+        <p
+          data-aos="fade"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="500"
+          data-aos-delay="1600"
+        >
           Get Cashback's worth upto <br />
           Rs 2,500 per month <br />
           & Rs 25,000 a year
         </p>
 
-        <div class="tab_block" id="tab_section">
+        <div
+          class="tab_block"
+          id="tab_section"
+          data-aos="fade"
+          data-aos-easing="ease-in-out"
+          data-aos-duration="500"
+          data-aos-delay="2400"
+        >
           <swiper ref="swip1" class="nav nav-tabs" :options="swiperOptions1">
             <swiper-slide>
-              <div class="nav-item" @click="changeOnButtonClick(0)" :class="[selected_index === 0 ? 'activestate' : '']">
-                <a
-                  class="nav-link"
-                  id="all_value"
-                  >All</a
-                >
+              <div
+                class="nav-item"
+                @click="changeOnButtonClick(0)"
+                :class="[selected_index === 0 ? 'activestate' : '']"
+              >
+                <a class="nav-link" id="all_value">All</a>
               </div>
             </swiper-slide>
             <swiper-slide>
-              <div class="nav-item" @click="changeOnButtonClick(1)" :class="[selected_index === 1 ? 'activestate' : '']">
-                <a
-                  class="nav-link"
-                  id="food_delivery_value"
-                  >Food Delivery</a
-                >
+              <div
+                class="nav-item"
+                @click="changeOnButtonClick(1)"
+                :class="[selected_index === 1 ? 'activestate' : '']"
+              >
+                <a class="nav-link" id="food_delivery_value">Food Delivery</a>
               </div>
             </swiper-slide>
             <swiper-slide>
-              <div class="nav-item" @click="changeOnButtonClick(2)" :class="[selected_index === 2 ? 'activestate' : '']">
-                <a
-                  class="nav-link"
-                  id="groceries_value"
-                  >Groceries</a
-                >
+              <div
+                class="nav-item"
+                @click="changeOnButtonClick(2)"
+                :class="[selected_index === 2 ? 'activestate' : '']"
+              >
+                <a class="nav-link" id="groceries_value">Groceries</a>
               </div>
             </swiper-slide>
             <swiper-slide>
-              <div class="nav-item" @click="changeOnButtonClick(3)" :class="[selected_index === 3 ? 'activestate' : '']">
-                <a
-                  class="nav-link"
-                  id="billspayments_value"
+              <div
+                class="nav-item"
+                @click="changeOnButtonClick(3)"
+                :class="[selected_index === 3 ? 'activestate' : '']"
+              >
+                <a class="nav-link" id="billspayments_value"
                   >Bills & Payments</a
                 >
               </div>
             </swiper-slide>
             <swiper-slide>
-              <div class="nav-item" @click="changeOnButtonClick(4)" :class="[selected_index === 4 ? 'activestate' : '']">
-                <a
-                  class="nav-link"
-                  id="service_value"
-                  >Service</a
-                >
+              <div
+                class="nav-item"
+                @click="changeOnButtonClick(4)"
+                :class="[selected_index === 4 ? 'activestate' : '']"
+              >
+                <a class="nav-link" id="service_value">Service</a>
               </div>
             </swiper-slide>
             <swiper-slide>
-              <div class="nav-item" @click="changeOnButtonClick(5)" :class="[selected_index === 5 ? 'activestate' : '']">
-                <a
-                  class="nav-link"
-                  id="entertainment_value"
-                  >Entertainment</a
-                >
+              <div
+                class="nav-item"
+                @click="changeOnButtonClick(5)"
+                :class="[selected_index === 5 ? 'activestate' : '']"
+              >
+                <a class="nav-link" id="entertainment_value">Entertainment</a>
               </div>
             </swiper-slide>
             <div class="tab-active-bar" :style="getStyleBar"></div>
           </swiper>
 
-          <swiper class="content_tab"
+          <swiper
+            class="content_tab"
             ref="swip2"
             :options="swiperOptions2"
             @slideChange="onThumbnailChange"
@@ -325,7 +337,6 @@
         Other Store Payzapp
       </button>
     </div>
-    <div class="circle_block" :class="anima_class"></div>
   </div>
 </template>
 
@@ -348,17 +359,6 @@ import global from "../../mixin/global.js";
 
 export default {
   mixins: [global],
-  transition: {
-    afterEnter(el) {
-
-      this.anima_class = "button-zoom-in";
-
-      setTimeout(() => {
-        alert("Haii");
-        this.anima_class = "button-zoom-out";
-      }, 300);
-    }
-  },
   components: {
     Entertainment,
     Food,
@@ -371,7 +371,6 @@ export default {
   },
   data() {
     return {
-      anima_class: null,
       selected_index: 0,
       // selected_width: 110,
       swiperOptions1: {
@@ -447,7 +446,7 @@ export default {
         width: Width + "px !important",
         transform: "translate3d(" + Left + "px, 0px, 0px)",
         transitionProperty: "all",
-        transitionDuration: "0.1.2s",
+        transitionDuration: "0.1.2s"
       };
     }
   },
@@ -504,7 +503,4 @@ export default {
 };
 </script>
 
-<style scoped>
-
-
-</style>
+<style scoped></style>
