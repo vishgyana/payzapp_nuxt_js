@@ -434,6 +434,7 @@ a:focus {
   width: 100%;
   float: left;
   background: #fff;
+  position:relative;
 
 
 }
@@ -1110,7 +1111,7 @@ border-radius: 8px;
   box-shadow: -6px -6px 16px #ffffff, 3px 3px 16px rgb(29 134 255 / 30%);
   border-radius: 8px;
   color: #fff;
-  z-index: 0;
+  /*z-index: 0;*/
   transition: transform 0.2s ease-in-out 0s;
 }
 .content_tab
