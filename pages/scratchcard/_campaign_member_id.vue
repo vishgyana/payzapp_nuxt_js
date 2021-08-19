@@ -215,7 +215,7 @@
           </p>
         </div>
         <Vuescratchcard
-          class=""
+          class="scratch_main w-full float-left"
           data-aos="fade-up"
           data-aos-easing="ease-in-out"
           data-aos-duration="800"

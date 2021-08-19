@@ -6,7 +6,7 @@
           data-aos="fade"
           data-aos-easing="ease-in-out"
           data-aos-duration="500"
-          data-aos-delay="800"
+          data-aos-delay="200"
           width="104"
           height="50"
           viewBox="0 0 104 50"
@@ -112,7 +112,7 @@
           data-aos="fade"
           data-aos-easing="ease-in-out"
           data-aos-duration="500"
-          data-aos-delay="800"
+          data-aos-delay="200"
           width="56"
           height="56"
           viewBox="0 0 56 56"
@@ -196,7 +196,7 @@
           data-aos="fade"
           data-aos-easing="ease-in-out"
           data-aos-duration="500"
-          data-aos-delay="1600"
+          data-aos-delay="1000"
         >
           Get Cashback's worth upto <br />
           Rs 2,500 per month <br />
@@ -206,12 +206,12 @@
         <div
           class="tab_block"
           id="tab_section"
-          data-aos="fade"
-          data-aos-easing="ease-in-out"
-          data-aos-duration="500"
-          data-aos-delay="2400"
         >
-          <swiper ref="swip1" class="nav nav-tabs" :options="swiperOptions1">
+          <swiper ref="swip1" class="nav nav-tabs" :options="swiperOptions1"
+                  data-aos="fade"
+                  data-aos-easing="ease-in-out"
+                  data-aos-duration="500"
+                  data-aos-delay="1800">
             <swiper-slide>
               <div
                 class="nav-item"
@@ -278,8 +278,15 @@
             @slideChange="onThumbnailChange"
           >
             <swiper-slide>
-              <div ref="firstTab" class="tab-content">
-                <Food />
+              <div ref="firstTab" class="tab-content"
+                   data-aos="fade"
+                   data-aos-easing="ease-in-out"
+                   data-aos-duration="500"
+                   data-aos-delay="2600">
+                <Food data-aos="fade"
+                      data-aos-easing="ease-in-out"
+                      data-aos-duration="500"
+                      data-aos-delay="3000"/>
                 <Grocries />
                 <Bill />
                 <Services />
@@ -315,26 +322,25 @@
         </div>
       </div>
     </div>
+
     <div
+      :style="{ opacity: isShowdownloadbutton }"
       class="bottom_button"
-      data-aos="fade"
+      data-aos="zoom"
       data-aos-easing="ease-in-out"
       data-aos-duration="300"
       data-aos-delay="100"
     >
       <button v-if="DeviceOS === 'android'">
-        <img src="@/assets/img/appstore.svg" class="img-fluid" /> Download For
-        Android Payzapp
+        <img src="@/assets/img/appstore.svg" class="img-fluid" /> Download Payzapp
       </button>
 
       <button v-if="DeviceOS === 'ios'">
-        <img src="@/assets/img/appstore.svg" class="img-fluid" /> Download For
-        Apple Store Payzapp
+        <img src="@/assets/img/appstore.svg" class="img-fluid" /> Download Payzapp
       </button>
 
       <button v-if="DeviceOS === 'other'">
-        <img src="@/assets/img/appstore.svg" class="img-fluid" /> Download For
-        Other Store Payzapp
+        <img src="@/assets/img/appstore.svg" class="img-fluid" /> Download Payzapp
       </button>
     </div>
   </div>
@@ -371,6 +377,7 @@ export default {
   },
   data() {
     return {
+      isShowdownloadbutton:0,
       selected_index: 0,
       // selected_width: 110,
       swiperOptions1: {
@@ -382,6 +389,11 @@ export default {
         slidesPerView: 1
       }
     };
+  },
+  created() {
+    setTimeout(() => {
+      this.isShowdownloadbutton = 1;
+    },3800);
   },
   computed: {
     ...mapState("payzappcampaign", ["DeviceOS"]),
@@ -446,7 +458,7 @@ export default {
         width: Width + "px !important",
         transform: "translate3d(" + Left + "px, 0px, 0px)",
         transitionProperty: "all",
-        transitionDuration: "0.1.2s"
+        transitionDuration: "0.1s"
       };
     }
   },
