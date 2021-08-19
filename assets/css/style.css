@@ -387,7 +387,7 @@ a:focus {
 .tab_block {
   width: 100%;
   float: left;
-  margin-top: 15px;
+  margin-top: 0px;
 }
 .tabs div:nth-child(1) {
   position: relative;
@@ -435,12 +435,8 @@ a:focus {
   float: left;
   background: #fff;
   position:relative;
-
-
 }
 .nav-tabs .nav-link {
-  position:relative;
-  z-index:99;
   width:100%;
   float:left;
   padding: 6.5px 16px;
@@ -1032,7 +1028,8 @@ h1.ml8 {
   height: 1em;
 }
 
-.ml8 .letters {
+.ml8 .letters
+{
   position: relative;
   z-index: 2;
   display: inline-block;
@@ -1040,14 +1037,14 @@ h1.ml8 {
   right: -0.12em;
   top: -0.2em;
 }
-
-.ml8 .bang {
+.ml8 .bang
+{
   font-size: 1.4em;
   top: auto;
   left: -0.06em;
 }
-
-.ml8 .circle {
+.ml8 .circle
+{
   position: absolute;
   left: 0;
   right: 0;
@@ -1055,15 +1052,15 @@ h1.ml8 {
   top: 0;
   bottom: 0;
 }
-
-.ml8 .circle-white {
+.ml8 .circle-white
+{
   width: 3em;
   height: 3em;
   border: 2px dashed white;
   border-radius: 2em;
 }
-
-.ml8 .circle-dark {
+.ml8 .circle-dark
+{
   width: 2.2em;
   height: 2.2em;
   background-color: #4f7b86;
@@ -1080,7 +1077,7 @@ h1.ml8 {
 }
 .swiper-slide .activestate
 {
-  background: none;
+  background: none !important;
 }
 .swiper-slide .activestate a
 {
@@ -1094,15 +1091,16 @@ border-radius: 8px;
   width:auto !important;
   float:left;
   margin-right:15px;
+  z-index: 99;
 }
-
-.swiper-wrapper{
-
+.swiper-wrapper
+{
   padding:0 15px;
 }
-.tab-active-bar {
+.tab-active-bar
+{
   top: 0;
-  position: absolute;
+  position: fixed;
   left: 0;
   height: 100%;
   width: 115px;
@@ -1111,7 +1109,7 @@ border-radius: 8px;
   box-shadow: -6px -6px 16px #ffffff, 3px 3px 16px rgb(29 134 255 / 30%);
   border-radius: 8px;
   color: #fff;
-  /*z-index: 0;*/
+  z-index: 98;
   transition: transform 0.2s ease-in-out 0s;
 }
 .content_tab
@@ -1147,4 +1145,9 @@ border-radius: 8px;
 .scratch_main
 {
   transition-delay: 4s;
+}
+
+.swiper-container
+{
+  z-index:0 !important;
 }
