@@ -21,6 +21,7 @@ jobs:
         run: |
           cd develop/
           yarn build
+          yarn generate
           
       - name: GZip File
         run: |
