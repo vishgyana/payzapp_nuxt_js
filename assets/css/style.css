@@ -439,7 +439,7 @@ a:focus {
 }
 .nav-tabs .nav-link {
   position:relative;
-  z-index:2;
+  z-index:99;
   width:100%;
   float:left;
   padding: 6.5px 16px;
@@ -468,7 +468,7 @@ a:focus {
   border-radius: 16px;
   padding: 20px;
   overflow-y: scroll;
-  height: 380px;
+  height: 350px;
 }
 .cashback_block {
   width: 100%;
