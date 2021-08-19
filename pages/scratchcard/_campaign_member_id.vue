@@ -219,7 +219,6 @@
           data-aos="fade-up"
           data-aos-easing="ease-in-out"
           data-aos-duration="800"
-          data-aos-delay="3000"
         />
       </div>
     </div>
