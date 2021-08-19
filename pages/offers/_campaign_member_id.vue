@@ -458,7 +458,7 @@ export default {
         width: Width + "px !important",
         transform: "translate3d(" + Left + "px, 0px, 0px)",
         transitionProperty: "all",
-        transitionDuration: "0.1s"
+        transitionDuration: "0.1.2s"
       };
     }
   },
