@@ -222,10 +222,14 @@ export default {
     },
     showConfetti() {
       confetti({
-        particleCount: 45,
-        spread: 90,
+        particleCount: 75,
+        spread: 45,
         origin: { y: 0.5 }
       });
+
+      setTimeout(() => {
+        confetti.reset();
+      }, 3000);
     }
   },
   mounted() {
