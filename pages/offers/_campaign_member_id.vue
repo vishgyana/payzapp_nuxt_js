@@ -322,7 +322,6 @@
         </div>
       </div>
     </div>
-
     <div
       :style="{ opacity: isShowdownloadbutton }"
       class="bottom_button"
