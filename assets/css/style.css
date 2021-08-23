@@ -430,7 +430,7 @@ a:focus
   border-bottom: none;
   margin-bottom: 0;
   padding-bottom: 24px !important;
-  margin-top:24px;
+  padding-top:24px !important;
 }
 .nav-tabs li {
   margin-right: 20px;
