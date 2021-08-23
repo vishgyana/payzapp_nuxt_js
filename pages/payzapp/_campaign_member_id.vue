@@ -3,15 +3,16 @@
     <audio ref="audioElement">
       <source :src="selectedObj.url" />
     </audio>
+    <Modal />
     <Scratchcard v-if="selectedIndex === 0" :moveToOffers="moveToOffers" />
     <Offers v-if="selectedIndex === 1" />
     <div class="circle_block" :class="anima_class"></div>
   </div>
 </template>
-
 <script>
 import Scratchcard from "@/pages/scratchcard/_campaign_member_id.vue";
 import Offers from "@/pages/offers/_campaign_member_id.vue";
+import Modal from "@/components/payzappcomponent/Modal/index.vue";
 
 import { mapState, mapActions, mapGetters } from "vuex";
 
@@ -35,7 +36,8 @@ export default {
   },
   components: {
     Scratchcard,
-    Offers
+    Offers,
+    Modal
   },
   methods: {
     ...mapActions("payzappcampaign", ["increaseIndex", "mainpageRenderAction"]),
