@@ -19,62 +19,75 @@ body {
   z-index:9999;
   background-color: #FAFAFA;
 }
-@media (max-width: 767px) {
-  body {
+@media (max-width: 767px)
+{
+  body
+  {
     background-attachment: initial;
   }
 }
-html {
+html
+{
   height: 100vh;
   width: 100%;
   overflow: hidden;
 }
-button {
+button
+{
   cursor: pointer;
 }
-p {
+p
+{
   margin-bottom: 0;
 }
-ul {
+ul
+{
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 a:hover,
-a:focus {
+a:focus
+{
   outline: none;
   text-decoration: none;
   box-shadow: none;
 }
-.header_block {
+.header_block
+{
   display: flex;
   justify-content: space-between;
 }
-
-.main_content {
+.main_content
+{
 
 }
-.main_content h2 {
+.main_content h2
+{
   color: #ee0102;
 }
-.main_content p {
+.main_content p
+{
   color: #202020;
 }
-.h-90 {
+.h-90
+{
   position: absolute;
   top:0;
   height:100%;
   width:100%;
   align-items: center;
 }
-.bottom_button {
+.bottom_button
+{
   position: fixed;
   bottom: 0;
   width: 100%;
   padding: 20px;
   left: 0;
 }
-.bottom_button button {
+.bottom_button button
+{
   background: #0076ff;
   box-shadow: -6px -6px 16px #ffffff, 6px 6px 16px rgba(29, 134, 255, 0.3);
   border-radius: 8px;
@@ -89,7 +102,8 @@ a:focus {
   justify-content: center;
   align-items: center;
 }
-.bottom_button button svg {
+.bottom_button button svg
+{
   font-size: 25px;
   margin-left: 10px;
   vertical-align: middle;
@@ -320,10 +334,10 @@ a:focus {
   animation-iteration-count: 1;
 }
 .congratulation_img {
-  width: auto !important;
+  width: 45% !important;
   display: flex;
   justify-content: center;
-  margin: 0 auto 20px auto;
+  margin: 0 auto;
   float: none !important;
 }
 #scratchcard {
@@ -1146,8 +1160,12 @@ border-radius: 8px;
 {
   transition-delay: 4s;
 }
-
 .swiper-container
 {
   z-index:0 !important;
+}
+
+.h-90
+{
+  height:90%;
 }

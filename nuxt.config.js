@@ -3,7 +3,7 @@ export default {
   ssr: false,
   target: "static",
   head: {
-    title: "payzappnuxt",
+    title: "PAYZAPP",
     htmlAttrs: {
       lang: "en"
     },

@@ -190,7 +190,7 @@
         </svg>
       </div>
     </div>
-    <div class="items-center h-screen flex absolute top-0 w-full">
+    <div class="items-center h-90 flex absolute top-0 w-full">
       <div class="content_block">
         <p
           data-aos="fade"

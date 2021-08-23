@@ -276,7 +276,6 @@ export default {
       this.setShowcuriousbutton(0);
       this.moveToOffers();
     },
-
     surpriseAnimation() {
       this.$anime
         .timeline({ loop: false })
