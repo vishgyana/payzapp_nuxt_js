@@ -16,11 +16,12 @@ export default {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["~/assets/css/style.css",'aos/dist/aos.css'],
+  css: ["~/assets/css/style.css", "aos/dist/aos.css"],
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: "@/plugins/aos", mode: "client" },
-    { src: "@/plugins/vue-awesome-swiper" }
+    { src: "@/plugins/vue-awesome-swiper" },
+    { src: "@/plugins/directives", mode: "client" }
   ],
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -29,7 +30,7 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxtjs/tailwindcss",
     // '@nuxtjs/ngrok',
-    'nuxt-animejs'
+    "nuxt-animejs"
   ],
   animejs: true,
   // server: {
@@ -50,7 +51,7 @@ export default {
       "fade-up",
       "zoom-in"
     ]
-  },
+  }
   // ngrok: {
   //   // module options
   //   authtoken: '1wfX25hXE9eqYM56jFGP4sy0E84_2eidW8j5hemBq1h8uNFce'
