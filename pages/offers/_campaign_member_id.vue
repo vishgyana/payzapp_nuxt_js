@@ -164,17 +164,17 @@
       data-aos-duration="300"
       data-aos-delay="100"
     >
-      <button v-if="DeviceOS === 'android'">
+      <button v-if="DeviceOS === 'android'" @click="Downloadlink">
         <img src="@/assets/img/appstore.svg" class="img-fluid" /> Download
         Payzapp
       </button>
 
-      <button v-if="DeviceOS === 'ios'">
+      <button v-if="DeviceOS === 'ios'" @click="Downloadlink">
         <img src="@/assets/img/appstore.svg" class="img-fluid" /> Download
         Payzapp
       </button>
 
-      <button v-if="DeviceOS === 'other'">
+      <button v-if="DeviceOS === 'other'" @click="Downloadlink">
         <img src="@/assets/img/appstore.svg" class="img-fluid" /> Download
         Payzapp
       </button>
@@ -351,7 +351,10 @@ export default {
       this.selected_index = val;
       this.$refs.swip2.$swiper.slideTo(val);
     },
-    ...mapActions("payzappcampaign", ["increaseIndex"])
+    ...mapActions("payzappcampaign", ["increaseIndex"]),
+    Downloadlink(){
+      window.open("http://onelink.to/82e84e","_blank");
+    }
   }
 };
 </script>

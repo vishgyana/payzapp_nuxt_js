@@ -1167,9 +1167,13 @@ border-radius: 8px;
 
 .h-90
 {
-  height:90%;
+  height:82vh;
 }
 .z-1
 {
   z-index:0;
+}
+.h-90vh
+{
+  height:90vh;
 }
