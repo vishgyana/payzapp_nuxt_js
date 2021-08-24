@@ -3,7 +3,7 @@
     <audio ref="audioElement">
       <source :src="selectedObj.url" />
     </audio>
-    <Modal />
+    <Modal ref="AudioNotificationModal" />
     <Scratchcard v-if="selectedIndex === 0" :moveToOffers="moveToOffers" />
     <Offers v-if="selectedIndex === 1" />
     <div class="circle_block" :class="anima_class"></div>
@@ -56,11 +56,11 @@ export default {
       this.$refs.audioElement
         .play()
         .then(() => {
-          console.log("mainpageRenderAction true");
+          this.$refs.AudioNotificationModal.triggerModalshow();
           this.mainpageRenderAction("true");
         })
         .catch(() => {
-          console.log("mainpageRenderAction false");
+          this.$refs.AudioNotificationModal.triggerModalshow();
           this.mainpageRenderAction("false");
         });
     },

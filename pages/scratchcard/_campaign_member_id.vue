@@ -191,7 +191,7 @@
       </div>
     </div>
     <div
-      class="grid grid-cols-none items-center h-screen flex absolute top-0 w-full"
+      class="grid grid-cols-none items-center h-screen flex relative top-0 w-full z-1"
     >
       <div class="main_content w-full float-left">
         <div v-if="isShowsurprisesection">
