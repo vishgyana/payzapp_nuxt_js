@@ -92,7 +92,6 @@ export default {
       this.showModal();
     },
     triggerModalhide() {
-      alert("triggerModalhide");
       this.hideModal();
     }
   },

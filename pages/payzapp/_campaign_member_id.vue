@@ -40,7 +40,11 @@ export default {
     Modal
   },
   methods: {
-    ...mapActions("payzappcampaign", ["increaseIndex", "mainpageRenderAction"]),
+    ...mapActions("payzappcampaign", [
+      "increaseIndex",
+      "mainpageRenderAction",
+      "changebuttonBlink"
+    ]),
     moveToOffers() {
       this.anima_class = "button-zoom-in";
       setTimeout(() => {
@@ -64,8 +68,15 @@ export default {
           this.mainpageRenderAction("false");
         });
     },
+    audioEnded() {
+      this.changebuttonBlink("true");
+    },
     triggerAudioplay() {
+      this.changebuttonBlink("false");
       this.$refs.audioElement.load();
+      this.$refs.audioElement.addEventListener("ended", () => {
+        this.audioEnded(this.$refs.audioElement.currentTime);
+      });
       this.$refs.audioElement.addEventListener("canplaythrough", null);
       this.$refs.audioElement.addEventListener("canplaythrough", () => {
         this.trigerAutoplay();
