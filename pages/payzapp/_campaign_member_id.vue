@@ -60,7 +60,6 @@ export default {
       this.$refs.audioElement
         .play()
         .then(() => {
-          this.$refs.AudioNotificationModal.triggerModalshow();
           this.mainpageRenderAction("true");
         })
         .catch(() => {
@@ -91,7 +90,7 @@ export default {
     }
   },
   computed: {
-    ...mapState("payzappcampaign", ["selectedIndex"]),
+    ...mapState("payzappcampaign", ["selectedIndex", "repeatBtnclickcount"]),
     ...mapGetters("payzappcampaign", ["selectedObj", "isaudioMuted"])
   },
   mounted() {
@@ -104,6 +103,9 @@ export default {
     isaudioMuted() {
       let MValue = this.audioMuted == "false" ? false : true;
       this.$refs.audioElement.muted = MValue;
+    },
+    repeatBtnclickcount() {
+      this.triggerAudioplay();
     }
   }
 };
