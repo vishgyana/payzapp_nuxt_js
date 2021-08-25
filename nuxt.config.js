@@ -21,6 +21,7 @@ export default {
   plugins: [
     { src: "@/plugins/aos", mode: "client" },
     { src: "@/plugins/vue-awesome-swiper" },
+    { src: "@/plugins/modal" },
     { src: "@/plugins/directives", mode: "client" }
   ],
   // Auto import components: https://go.nuxtjs.dev/config-components

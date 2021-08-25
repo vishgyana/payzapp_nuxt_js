@@ -25,6 +25,7 @@
     "swiper": "^6.8.2",
     "vue-awesome-swiper": "^4.1.1",
     "vue-confetti": "^2.2.2",
+    "vue-js-modal": "^2.0.1",
     "vue-tailwind": "^2.4.2",
     "vuescroll": "^4.17.3",
     "vuescroll-carousel": "^0.0.13"

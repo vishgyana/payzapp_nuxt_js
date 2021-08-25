@@ -1,102 +1,25 @@
 <template>
   <div>
-    <div
-      v-if="isModalshow"
-      class="p-5 overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex"
-      data-aos="zoom"
-      data-aos-easing="ease-in-out"
-      data-aos-duration="800"
-      data-aos-delay="300"
-      v-click-outside="triggerModalhide"
-    >
-      <div class="relative w-auto my-6 mx-auto max-w-6xl">
-        <!--content-->
-        <div
-          class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
-        >
-          <!--header-->
-          <div
-            class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t"
-          >
-            <h3 class="text-3xl font-semibold">
-              Modal Title
-            </h3>
-            <button
-              class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-              v-on:click="toggleModal()"
-            >
-              <span
-                class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none"
-              >
-                ×
-              </span>
-            </button>
-          </div>
-          <!--body-->
-          <div class="relative p-6 flex-auto">
-            <p class="my-4 text-blueGray-500 text-lg leading-relaxed">
-              I always felt like I could do anything. That’s the main thing
-              people are controlled by! Thoughts- their perception of
-              themselves! They're slowed down by their perception of themselves.
-              If you're taught you can’t do anything, you won’t do anything. I
-              was taught I could do everything.
-            </p>
-          </div>
-          <!--footer-->
-          <div
-            class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b"
-          >
-            <button
-              class="text-red-500 bg-transparent border border-solid border-red-500 hover:bg-red-500 hover:text-white active:bg-red-600 font-bold uppercase text-sm px-6 py-3 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-              type="button"
-              v-on:click="hideModal()"
-            >
-              Close
-            </button>
-            <button
-              class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-              type="button"
-              v-on:click="hideModal()"
-            >
-              Save Changes
-            </button>
-          </div>
-        </div>
+    <modal name="example-modal" height="auto" data-aos="fade"
+           data-aos-easing="ease-in-out"
+           data-aos-duration="300"
+           data-aos-delay="500">
+      <div class="example-modal-content">
+        <h1 class="text-center font-bold text-3xl w-full float-left mb-5"> Welcome to Payzapp </h1>
+        <p class="text-center font-normal text-base mb-6 ml11 w-full float-left"> I am Eva! Please Enable me to help you understand about Payzapp </p>
+        <button>Play EVA</button>
       </div>
-    </div>
-    <div
-      v-if="isModalshow"
-      class="opacity-25 fixed inset-0 z-40 bg-black"
-    ></div>
+    </modal>
   </div>
 </template>
 
 <script>
 export default {
-  name: "large-modal",
-  data() {
-    return {
-      isModalshow: false
-    };
-  },
   methods: {
-    showModal() {
-      this.isModalshow = true;
-      this.$emit("Modalshow", this.isModalshow);
-    },
-    hideModal() {
-      this.isModalshow = false;
-      this.$emit("Modalhide", this.isModalshow);
-    },
     triggerModalshow() {
-      this.showModal();
-    },
-    triggerModalhide() {
-      this.hideModal();
+      this.$modal.show('example-modal')
     }
-  },
-  created() {
-    this.triggerModalhide();
   }
-};
+}
 </script>
+<style></style>
