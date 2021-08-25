@@ -1,13 +1,24 @@
 <template>
   <div>
-    <modal name="example-modal" height="auto" data-aos="fade"
-           data-aos-easing="ease-in-out"
-           data-aos-duration="300"
-           data-aos-delay="500">
+    <modal
+      name="welcomeModal"
+      height="auto"
+      data-aos="fade"
+      data-aos-easing="ease-in-out"
+      data-aos-duration="300"
+      data-aos-delay="500"
+      @before-close="beforeClose"
+    >
       <div class="example-modal-content">
-        <h1 class="text-center font-bold text-3xl w-full float-left mb-5"> Welcome to Payzapp </h1>
-        <p class="text-center font-normal text-base mb-6 ml11 w-full float-left"> I am Eva! Please Enable me to help you understand about Payzapp </p>
-        <button>Play EVA</button>
+        <h1 class="text-center font-bold text-3xl w-full float-left mb-5">
+          Welcome to Payzapp
+        </h1>
+        <p
+          class="text-center font-normal text-base mb-6 ml11 w-full float-left"
+        >
+          I am Eva! Please Enable me to help you understand about Payzapp
+        </p>
+        <button @click="triggerModalhide">Play EVA</button>
       </div>
     </modal>
   </div>
@@ -17,9 +28,16 @@
 export default {
   methods: {
     triggerModalshow() {
-      this.$modal.show('example-modal')
+      this.$modal.show("welcomeModal");
+    },
+    triggerModalhide() {
+      this.$emit("playEva");
+      this.$modal.hide("welcomeModal");
+    },
+    beforeClose() {
+      this.$emit("playEva");
     }
   }
-}
+};
 </script>
 <style></style>

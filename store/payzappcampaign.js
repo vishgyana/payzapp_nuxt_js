@@ -21,7 +21,7 @@ export default {
     feedBack: "false",
     buttonBlink: "false",
     repeatBtnclickcount: 1,
-    mainpageRender: "false",
+    mainpageRender: false,
     selectedCampaignoffer: null,
     googleAddress: null,
     isShowcuriousbutton: 0,
@@ -31,11 +31,11 @@ export default {
     audiolink: [
       {
         url:
-          "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/payzapp_audio_1.mp3"
+          "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/payzapp_audio_2.mp3"
       },
       {
         url:
-          "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/payzapp_audio_2.mp3"
+          "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/payzapp_audio_1.mp3"
       }
     ],
     AudioStatus: {
