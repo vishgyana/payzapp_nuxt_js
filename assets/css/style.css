@@ -479,7 +479,7 @@ a:focus
   border-radius: 16px;
   padding: 20px;
   overflow-y: scroll;
-  height: 350px;
+  height: 400px;
 }
 .cashback_block {
   width: 100%;
@@ -1167,7 +1167,7 @@ border-radius: 8px;
 
 .h-90
 {
-  height:82vh;
+  height:75vh;
 }
 .z-1
 {
