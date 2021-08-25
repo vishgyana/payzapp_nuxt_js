@@ -24,7 +24,7 @@
       <div class="main_content w-full float-left">
         <div v-if="isShowsurprisesection">
           <h1
-            class="ml8 text-center font-bold text-3xl w-full float-left text-center"
+            class="ml8 text-center font-bold text-3xl w-full float-left"
             v-show="issurpriseVisibles"
           >
             <span class="letters-container">
