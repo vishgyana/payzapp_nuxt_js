@@ -6,7 +6,7 @@
           data-aos="fade"
           data-aos-easing="ease-in-out"
           data-aos-duration="300"
-          data-aos-delay="500"
+          data-aos-delay="300"
         />
       </div>
       <div class="col-end-7">
@@ -14,7 +14,7 @@
           data-aos="fade"
           data-aos-easing="ease-in-out"
           data-aos-duration="300"
-          data-aos-delay="800"
+          data-aos-delay="300"
         />
       </div>
     </div>
