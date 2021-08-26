@@ -18,7 +18,9 @@
         />
       </div>
     </div>
-    <div class="grid grid-cols-none items-center h-90vh flex relative top-0 w-full z-1">
+    <div
+      class="grid grid-cols-none items-center h-90vh flex relative top-0 w-full z-1"
+    >
       <div class="main_content w-full float-left">
         <div v-if="isShowsurprisesection">
           <h1
@@ -65,7 +67,7 @@ import { mapActions, mapState } from "vuex";
 import surprise from "@/components/payzappcomponent/Screen/surprise";
 import Vuescratchcard from "@/components/Vuescratchcard/index.vue";
 import Audio from "@/components/payzappcomponent/Audioicon/Audio.vue";
-import Logo from "@/components/payzappcomponent/Logoicon/Logo.vue";
+import Logo from "@/assets/img/logo.svg";
 
 // Mixin start
 import global from "../../mixin/global.js";
@@ -91,11 +93,11 @@ export default {
     name() {
       return this.data;
     },
-    CuriousbtnStyle(){
-      if(this.isShowcuriousbutton == 1) {
-        return { opacity: 1 , visibility : "visible" }
-      }else{
-        return { opacity: 0 , visibility : "hidden" }
+    CuriousbtnStyle() {
+      if (this.isShowcuriousbutton == 1) {
+        return { opacity: 1, visibility: "visible" };
+      } else {
+        return { opacity: 0, visibility: "hidden" };
       }
     }
   },
@@ -154,6 +156,6 @@ export default {
       this.surpriseBelowtextAnimation();
       this.issurpriseBelowtext = true;
     }, 2500);
-  },
+  }
 };
 </script>
