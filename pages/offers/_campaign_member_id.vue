@@ -169,12 +169,7 @@
         Payzapp
       </button>
 
-      <button v-if="DeviceOS === 'ios'" @click="Downloadlink">
-        <img src="@/assets/img/appstore.svg" class="img-fluid" /> Download
-        Payzapp
-      </button>
-
-      <button v-if="DeviceOS === 'other'" @click="Downloadlink">
+      <button v-else @click="Downloadlink">
         <img src="@/assets/img/appstore.svg" class="img-fluid" /> Download
         Payzapp
       </button>
@@ -352,8 +347,8 @@ export default {
       this.$refs.swip2.$swiper.slideTo(val);
     },
     ...mapActions("payzappcampaign", ["increaseIndex"]),
-    Downloadlink(){
-      window.open("http://onelink.to/82e84e","_blank");
+    Downloadlink() {
+      window.open("http://onelink.to/82e84e", "_blank");
     }
   }
 };
