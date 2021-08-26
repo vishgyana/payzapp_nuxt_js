@@ -22,7 +22,7 @@ export default {
     { src: "@/plugins/aos", mode: "client" },
     { src: "@/plugins/vue-awesome-swiper" },
     { src: "@/plugins/modal" },
-    { src: "@/plugins/directives", mode: "client" }
+    { src: "@/plugins/directives" }
   ],
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

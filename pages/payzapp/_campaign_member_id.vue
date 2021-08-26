@@ -3,8 +3,11 @@
     <audio ref="audioElement">
       <source :src="selectedObj.url" />
     </audio>
-    <Modal ref="AudioNotificationModal" />
-    <Scratchcard v-if="selectedIndex === 0" :moveToOffers="moveToOffers" />
+    <Modal ref="AudioNotificationModal" @playEva="listenModalclose" />
+    <Scratchcard
+      v-if="selectedIndex === 0 && mainpageRender"
+      :moveToOffers="moveToOffers"
+    />
     <Offers v-if="selectedIndex === 1" />
     <div class="circle_block" :class="anima_class"></div>
   </div>
@@ -60,11 +63,11 @@ export default {
       this.$refs.audioElement
         .play()
         .then(() => {
-          this.mainpageRenderAction("true");
+          this.mainpageRenderAction(true);
         })
         .catch(() => {
           this.$refs.AudioNotificationModal.triggerModalshow();
-          this.mainpageRenderAction("false");
+          this.mainpageRenderAction(false);
         });
     },
     audioEnded() {
@@ -87,10 +90,17 @@ export default {
       } else {
         this.$refs.audioElement.play();
       }
+    },
+    listenModalclose() {
+      this.triggerAudioplay();
     }
   },
   computed: {
-    ...mapState("payzappcampaign", ["selectedIndex", "repeatBtnclickcount"]),
+    ...mapState("payzappcampaign", [
+      "selectedIndex",
+      "repeatBtnclickcount",
+      "mainpageRender"
+    ]),
     ...mapGetters("payzappcampaign", ["selectedObj", "isaudioMuted"])
   },
   mounted() {
