@@ -165,12 +165,12 @@
       data-aos-delay="100"
     >
       <button v-if="DeviceOS === 'android'" @click="Downloadlink">
-        <img src="@/assets/img/playstore.svg" class="img-fluid" /> Download
+        <img src="~/assets/img/playstore.svg" class="img-fluid" /> Download
         Payzapp
       </button>
 
       <button v-else @click="Downloadlink">
-        <img src="@/assets/img/appstore.svg" class="img-fluid" /> Download
+        <img src="~/assets/img/appstore.svg" class="img-fluid" /> Download
         Payzapp
       </button>
     </div>
