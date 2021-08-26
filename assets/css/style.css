@@ -717,7 +717,7 @@ a:focus
   height: 100%;
   overflow-y: inherit;
 }
-.bottom_button button img {
+.bottom_button button svg {
   margin-right: 15px;
 }
 .line {
