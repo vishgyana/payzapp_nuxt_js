@@ -8,6 +8,8 @@
           data-aos-duration="300"
           data-aos-delay="100"
         />
+
+        <img src="@/assets/img/logo.webp" />
       </div>
       <div class="col-end-7">
         <Audio
