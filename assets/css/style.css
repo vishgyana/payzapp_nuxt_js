@@ -60,7 +60,6 @@ a:focus
 }
 .main_content
 {
-
 }
 .main_content h2
 {
@@ -108,7 +107,8 @@ a:focus
   margin-left: 10px;
   vertical-align: middle;
 }
-.logo_blocks {
+.logo_blocks
+{
   background: #fafafa;
   box-shadow: inset -5px -5px 8px #ffffff, inset 5px 5px 8px rgba(0, 0, 0, 0.03);
   border-radius: 16px;
@@ -116,23 +116,28 @@ a:focus
   float: left;
   padding: 10px;
 }
-.logo_blocks ul {
+.logo_blocks ul
+{
   width: 100%;
   float: left;
   display: flex;
   justify-content: space-between;
 }
-.logo_blocks ul li {
+.logo_blocks ul li
+{
   float: left;
 }
-.logo_blocks ul li img {
+.logo_blocks ul li img
+{
   float: left;
 }
-.content_block {
+.content_block
+{
   width: 100%;
   float: left;
 }
-.content_block h2 {
+.content_block h2
+{
   font-weight: bold;
   font-size: 32px;
   line-height: 48px;
@@ -141,7 +146,8 @@ a:focus
   float: left;
   text-align: center;
 }
-.content_block h5 {
+.content_block h5
+{
   font-weight: 600;
   font-size: 20px;
   line-height: 30px;
@@ -150,7 +156,8 @@ a:focus
   float: left;
   text-align: center;
 }
-.content_block p {
+.content_block p
+{
   font-weight: 600;
   font-size: 16px;
   line-height: 22px;
@@ -159,12 +166,13 @@ a:focus
   width: 100%;
   float: left;
 }
-
-.pay_block {
+.pay_block
+{
   width: 100%;
   float: left;
 }
-.pay_block h2 {
+.pay_block h2
+{
   font-weight: bold;
   font-size: 32px;
   line-height: 48px;
@@ -173,7 +181,8 @@ a:focus
   float: left;
   text-align: center;
 }
-.pay_block h5 {
+.pay_block h5
+{
   font-weight: 600;
   font-size: 20px;
   line-height: 30px;
@@ -182,7 +191,8 @@ a:focus
   float: left;
   text-align: center;
 }
-.pay_block p {
+.pay_block p
+{
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
@@ -192,7 +202,8 @@ a:focus
   float: left;
   margin-top: 15px;
 }
-.paycard_block {
+.paycard_block
+{
   background: #fafafa;
   box-shadow: inset -5px -5px 8px #ffffff, inset 5px 5px 8px rgba(0, 0, 0, 0.03);
   border-radius: 16px;
@@ -201,21 +212,25 @@ a:focus
   padding: 15px;
   margin-top: 30px;
 }
-.paycard_block ul {
+.paycard_block ul
+{
   width: 100%;
   float: left;
   display: flex;
   justify-content: space-between;
 }
-.paycard_block ul li {
+.paycard_block ul li
+{
   float: left;
   width: 48%;
   padding: 10px;
 }
-.paycard_block ul li img {
+.paycard_block ul li img
+{
   float: left;
 }
-.paycard_block ul li:nth-child(1) {
+.paycard_block ul li:nth-child(1)
+{
   background: radial-gradient(
     100% 805.1% at 100% 100%,
     #5087c7 0%,
@@ -226,7 +241,8 @@ a:focus
   border-radius: 8px;
   margin-bottom: 10px;
 }
-.paycard_block ul li h3 {
+.paycard_block ul li h3
+{
   font-weight: bold;
   font-size: 18px;
   line-height: 24px;
@@ -1175,27 +1191,32 @@ border-radius: 8px;
 }
 .h-90vh
 {
-  height:90vh;
+  height:80vh;
 }
 
 .vm--modal
 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90% !important;
+  left: 0 !important;
+  background: none !important;
+  margin: 0 auto !important;
+  box-shadow: none !important;
+  overflow: inherit !important;
+}
+.example-modal-content
+{
   width:90% !important;
   padding:25px !important;
   margin:0 auto;
-  display: flex;
   justify-content: center;
   left: 0 !important;
   box-shadow: 0px 4px 15px rgb(0 0 0 / 25%);
   border-radius: 20px !important;
   align-items: center;
-}
-.example-modal-content
-{
-  margin: 15px;
-  width: 100%;
-  float: left;
-  height: 100%;
+  background-color: #fff;
 }
 .example-modal-content h1
 {
@@ -1217,4 +1238,3 @@ border-radius: 8px;
   justify-content: center;
   align-items: center;
 }
-

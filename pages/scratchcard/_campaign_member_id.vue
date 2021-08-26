@@ -6,7 +6,7 @@
           data-aos="fade"
           data-aos-easing="ease-in-out"
           data-aos-duration="300"
-          data-aos-delay="0"
+          data-aos-delay="100"
         />
       </div>
       <div class="col-end-7">
@@ -14,7 +14,7 @@
           data-aos="fade"
           data-aos-easing="ease-in-out"
           data-aos-duration="300"
-          data-aos-delay="0"
+          data-aos-delay="100"
         />
       </div>
     </div>
@@ -148,12 +148,12 @@ export default {
     setTimeout(() => {
       this.surpriseAnimation();
       this.issurpriseVisibles = true;
-    }, 1600);
+    }, 800);
 
     setTimeout(() => {
       this.surpriseBelowtextAnimation();
       this.issurpriseBelowtext = true;
-    }, 3000);
+    }, 2500);
   },
 };
 </script>
