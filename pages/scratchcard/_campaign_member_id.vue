@@ -8,119 +8,6 @@
           data-aos-duration="300"
           data-aos-delay="100"
         />
-
-        <svg
-          width="104"
-          height="50"
-          viewBox="0 0 104 50"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g filter="url(#filter0_dd)">
-            <rect x="10" y="10" width="84" height="30" rx="4" fill="#FAFAFA" />
-            <path
-              d="M56.6369 31.7453H88.7161L48.399 37L59.2164 17.2706H46.7734L67.1429 13L56.6369 31.7453Z"
-              fill="#E70304"
-            />
-            <path
-              d="M17.0311 28.6731H20.665L20.3308 30.2872H15L16.0285 25.3086H17.7287L17.0311 28.6731Z"
-              fill="#E70304"
-            />
-            <path
-              d="M27.8775 25.3086L26.8457 30.2872H21.5732L21.9074 28.6731H25.483L26.1805 25.3086H27.8775Z"
-              fill="#E70304"
-            />
-            <path
-              d="M17.3293 19.0244H22.6634L22.326 20.6385H18.6953L17.9977 23.9965H16.3008L17.3293 19.0244Z"
-              fill="#E70304"
-            />
-            <path
-              d="M29.1789 19.0244L28.1504 23.9965H26.4534L27.1478 20.6385H23.5723L23.9065 19.0244H29.1789Z"
-              fill="#E70304"
-            />
-            <path
-              d="M24.1335 22.9961L23.9258 23.9964L23.6565 25.3084L23.4489 26.3152H20.0615L20.2692 25.3084L20.5385 23.9964L20.7461 22.9961H24.1335Z"
-              fill="#062D7E"
-            />
-            <path
-              d="M31.9648 19.021H36.0627C38.853 19.021 38.9634 21.041 38.6616 22.444C38.2203 24.464 36.9582 25.8832 34.3106 25.8832H33.1491L32.2179 30.2838H29.5703L31.9648 19.021ZM33.5741 23.9282H34.2977C35.3521 23.9282 35.748 23.2657 35.9037 22.509C36.0757 21.6418 35.9362 20.9793 34.8622 20.9793H34.1873L33.5741 23.9282Z"
-              fill="#062D7E"
-            />
-            <path
-              d="M41.9424 19.021H45.2519L45.6607 30.2838H42.919L42.9677 28.1371H40.2714L39.4214 30.2838H36.6797L41.9424 19.021ZM43.1072 21.0735H43.0747L41.0891 26.0911H43.0131L43.1072 21.0735Z"
-              fill="#062D7E"
-            />
-            <path
-              d="M48.0882 25.8508L46.6865 19.021H49.6164L49.9798 23.2007H50.0122L52.2023 19.021H55.0381L50.7358 25.8508L49.7916 30.2838H47.144L48.0882 25.8508Z"
-              fill="#062D7E"
-            />
-            <path
-              d="M66.4619 19.021H69.7714L70.1802 30.2838H67.4385L67.4872 28.1371H64.791L63.9409 30.2838H61.1992L66.4619 19.021ZM67.63 21.0735H67.5975L65.6118 26.0911H67.5359L67.63 21.0735Z"
-              fill="#E70304"
-            />
-            <path
-              d="M73.428 19.021H77.5259C80.3162 19.021 80.4266 21.041 80.1248 22.444C79.6836 24.464 78.4214 25.8832 75.7738 25.8832H74.609L73.6778 30.2838H71.0303L73.428 19.021ZM75.0341 23.9282H75.7576C76.8121 23.9282 77.2079 23.2657 77.3637 22.509C77.5356 21.6418 77.3961 20.9793 76.3222 20.9793H75.6441L75.0341 23.9282Z"
-              fill="#E70304"
-            />
-            <path
-              d="M82.1868 19.021H86.2847C89.075 19.021 89.1854 21.041 88.8836 22.444C88.4423 24.464 87.1802 25.8832 84.5326 25.8832H83.3678L82.4366 30.2838H79.7891L82.1868 19.021ZM83.7961 23.9282H84.5197C85.5741 23.9282 85.97 23.2657 86.1257 22.509C86.2977 21.6418 86.1582 20.9793 85.0842 20.9793H84.4061L83.7961 23.9282Z"
-              fill="#E70304"
-            />
-          </g>
-          <defs>
-            <filter
-              id="filter0_dd"
-              x="0"
-              y="0"
-              width="104"
-              height="50"
-              filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
-            >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
-              <feColorMatrix
-                in="SourceAlpha"
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                result="hardAlpha"
-              />
-              <feOffset dx="2" dy="2" />
-              <feGaussianBlur stdDeviation="4" />
-              <feColorMatrix
-                type="matrix"
-                values="0 0 0 0 0.933333 0 0 0 0 0.00392157 0 0 0 0 0.00784314 0 0 0 0.1 0"
-              />
-              <feBlend
-                mode="normal"
-                in2="BackgroundImageFix"
-                result="effect1_dropShadow"
-              />
-              <feColorMatrix
-                in="SourceAlpha"
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                result="hardAlpha"
-              />
-              <feOffset dx="-2" dy="-2" />
-              <feGaussianBlur stdDeviation="4" />
-              <feColorMatrix
-                type="matrix"
-                values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"
-              />
-              <feBlend
-                mode="normal"
-                in2="effect1_dropShadow"
-                result="effect2_dropShadow"
-              />
-              <feBlend
-                mode="normal"
-                in="SourceGraphic"
-                in2="effect2_dropShadow"
-                result="shape"
-              />
-            </filter>
-          </defs>
-        </svg>
       </div>
       <div class="col-end-7">
         <Audio
@@ -131,9 +18,7 @@
         />
       </div>
     </div>
-    <div
-      class="grid grid-cols-none items-center h-90vh flex relative top-0 w-full z-1"
-    >
+    <div class="grid grid-cols-none items-center h-90vh flex relative top-0 w-full z-1">
       <div class="main_content w-full float-left">
         <div v-if="isShowsurprisesection">
           <h1
@@ -206,11 +91,11 @@ export default {
     name() {
       return this.data;
     },
-    CuriousbtnStyle() {
-      if (this.isShowcuriousbutton == 1) {
-        return { opacity: 1, visibility: "visible" };
-      } else {
-        return { opacity: 0, visibility: "hidden" };
+    CuriousbtnStyle(){
+      if(this.isShowcuriousbutton == 1) {
+        return { opacity: 1 , visibility : "visible" }
+      }else{
+        return { opacity: 0 , visibility : "hidden" }
       }
     }
   },
@@ -269,6 +154,6 @@ export default {
       this.surpriseBelowtextAnimation();
       this.issurpriseBelowtext = true;
     }, 2500);
-  }
+  },
 };
 </script>
