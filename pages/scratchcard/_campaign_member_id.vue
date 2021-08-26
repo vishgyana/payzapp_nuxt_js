@@ -10,10 +10,6 @@
         />
 
         <svg
-          data-aos="fade"
-          data-aos-easing="ease-in-out"
-          data-aos-duration="300"
-          data-aos-delay="100"
           width="104"
           height="50"
           viewBox="0 0 104 50"
