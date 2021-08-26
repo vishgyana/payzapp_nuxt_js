@@ -67,7 +67,7 @@ import { mapActions, mapState } from "vuex";
 import surprise from "@/components/payzappcomponent/Screen/surprise";
 import Vuescratchcard from "@/components/Vuescratchcard/index.vue";
 import Audio from "@/components/payzappcomponent/Audioicon/Audio.vue";
-import Logo from "@/assets/img/logo.svg";
+import Logo from "@/components/payzappcomponent/Logoicon/Logo.vue";
 
 // Mixin start
 import global from "../../mixin/global.js";
