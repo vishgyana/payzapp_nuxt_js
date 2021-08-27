@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <svg width="104" height="50" viewBox="0 0 104 50" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g filter="url(#filter0_dd)">
         <rect x="10" y="10" width="84" height="30" rx="4" fill="#FAFAFA"/>
@@ -34,10 +33,11 @@
         </filter>
       </defs>
     </svg>
-
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+
+}
 </script>
