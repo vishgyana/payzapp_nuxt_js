@@ -18,7 +18,9 @@
         />
       </div>
     </div>
-    <div class="grid grid-cols-none items-center h-90vh flex relative top-0 w-full z-1">
+    <div
+      class="grid grid-cols-none items-center h-90vh flex relative top-0 w-full z-1"
+    >
       <div class="main_content w-full float-left">
         <div v-if="isShowsurprisesection">
           <h1
@@ -91,11 +93,11 @@ export default {
     name() {
       return this.data;
     },
-    CuriousbtnStyle(){
-      if(this.isShowcuriousbutton == 1) {
-        return { opacity: 1 , visibility : "visible" }
-      }else{
-        return { opacity: 0 , visibility : "hidden" }
+    CuriousbtnStyle() {
+      if (this.isShowcuriousbutton == 1) {
+        return { opacity: 1, visibility: "visible" };
+      } else {
+        return { opacity: 0, visibility: "hidden" };
       }
     }
   },
@@ -154,6 +156,6 @@ export default {
       this.surpriseBelowtextAnimation();
       this.issurpriseBelowtext = true;
     }, 2500);
-  },
+  }
 };
 </script>

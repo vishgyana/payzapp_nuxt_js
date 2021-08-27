@@ -54,7 +54,7 @@ export default {
     };
   },
   computed: {
-    ...mapState("payzappcampaign", ["isAnimationblockadded"]),
+    ...mapState("payzappcampaign", ["isAnimationblockadded", "selectedIndex"]),
     ctx() {
       return this.canvas.getContext("2d");
     },
@@ -222,14 +222,10 @@ export default {
     },
     showConfetti() {
       confetti({
-        particleCount: 75,
-        spread: 45,
+        particleCount: 50,
+        spread: 50,
         origin: { y: 0.5 }
       });
-
-      setTimeout(() => {
-        confetti.reset();
-      }, 3000);
     }
   },
   mounted() {
@@ -238,6 +234,11 @@ export default {
   watch: {
     filledPercentage() {
       this.checkPercentagereached();
+    },
+    selectedIndex() {
+      if (Number(selectedIndex) === 1) {
+        confetti.reset();
+      }
     }
   }
 };
