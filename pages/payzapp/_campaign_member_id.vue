@@ -16,8 +16,12 @@
 import Scratchcard from "@/pages/scratchcard/_campaign_member_id.vue";
 import Offers from "@/pages/offers/_campaign_member_id.vue";
 import Modal from "@/components/payzappcomponent/Modal/index.vue";
-
 import { mapState, mapActions, mapGetters } from "vuex";
+
+//canvas-confetti start
+import MyPromise from "promise";
+import confetti from "canvas-confetti";
+confetti.Promise = MyPromise;
 
 export default {
   data() {
@@ -93,13 +97,21 @@ export default {
     },
     listenModalclose() {
       this.triggerAudioplay();
+    },
+    showConfetti() {
+      confetti({
+        particleCount: 50,
+        spread: 50,
+        origin: { y: 0.5 }
+      });
     }
   },
   computed: {
     ...mapState("payzappcampaign", [
       "selectedIndex",
       "repeatBtnclickcount",
-      "mainpageRender"
+      "mainpageRender",
+      "is_scratchcardDone"
     ]),
     ...mapGetters("payzappcampaign", ["selectedObj", "isaudioMuted"])
   },
@@ -116,6 +128,16 @@ export default {
     },
     repeatBtnclickcount() {
       this.triggerAudioplay();
+    },
+    is_scratchcardDone() {
+      if (this.is_scratchcardDone) {
+        this.showConfetti();
+      }
+    },
+    selectedIndex() {
+      if (Number(this.selectedIndex) === 1) {
+        confetti.reset();
+      }
     }
   }
 };
