@@ -1238,3 +1238,13 @@ border-radius: 8px;
   justify-content: center;
   align-items: center;
 }
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+  /* Styles */
+  body, .example-modal-content
+  {
+    width:320px;
+    margin:0 auto;
+  }
+
+}
