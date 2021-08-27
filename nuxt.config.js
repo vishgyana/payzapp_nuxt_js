@@ -30,7 +30,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     "@nuxtjs/tailwindcss",
-    // '@nuxtjs/ngrok',
+    '@nuxtjs/ngrok',
     "nuxt-animejs"
   ],
   animejs: true,
@@ -52,9 +52,9 @@ export default {
       "fade-up",
       "zoom-in"
     ]
+  },
+  ngrok: {
+    // module options
+    authtoken: '1wfX25hXE9eqYM56jFGP4sy0E84_2eidW8j5hemBq1h8uNFce'
   }
-  // ngrok: {
-  //   // module options
-  //   authtoken: '1wfX25hXE9eqYM56jFGP4sy0E84_2eidW8j5hemBq1h8uNFce'
-  // }
 };
