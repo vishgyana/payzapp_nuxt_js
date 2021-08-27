@@ -71,9 +71,8 @@ a:focus
 }
 .h-90
 {
-  position: relative;
+  position: absolute;
   top:0;
-  height:100%;
   width:100%;
   align-items: center;
 }
@@ -1183,7 +1182,7 @@ border-radius: 8px;
 
 .h-90
 {
-  height:73vh;
+  height:100vh;
 }
 .z-1
 {
