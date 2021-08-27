@@ -28,6 +28,7 @@ export default {
     isShowsurprisesection: true,
     isAnimationblockadded: false,
     DeviceOS: null,
+    is_scratchcardDone: false,
     audiolink: [
       {
         url:
@@ -185,6 +186,9 @@ export default {
     },
     setAnimationblockadded({ commit }, payload) {
       commit("mutate_animationblockadded", payload);
+    },
+    setscratchcardDone({ commit }, payload) {
+      commit("mutate_is_scratchcardDone", payload);
     }
   },
   mutations: {
@@ -235,6 +239,9 @@ export default {
     },
     mutate_deviceos(state, payload) {
       state.DeviceOS = payload;
+    },
+    mutate_is_scratchcardDone(state, payload) {
+      state.is_scratchcardDone = payload;
     }
   },
   getters: {

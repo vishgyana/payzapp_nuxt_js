@@ -16,7 +16,6 @@ export default {
     }
   },
   created() {
-      console.log("created");
     this.mutate_deviceos(this.getMobileOS());
   }
 };
