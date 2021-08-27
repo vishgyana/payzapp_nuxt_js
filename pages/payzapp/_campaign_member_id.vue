@@ -100,7 +100,7 @@ export default {
     },
     showConfetti() {
       confetti({
-        particleCount: 50,
+        particleCount: 100,
         spread: 50,
         origin: { y: 0.5 }
       });
