@@ -34,12 +34,7 @@
 </template>
 
 <script>
-import { mapActions, mapState } from "vuex";
-//canvas-confetti start
-import MyPromise from "promise";
-import confetti from "canvas-confetti";
-confetti.Promise = MyPromise;
-//canvas-confetti end
+import { mapActions, mapState, mapMutations } from "vuex";
 export default {
   data() {
     return {
@@ -69,7 +64,8 @@ export default {
     ...mapActions("payzappcampaign", [
       "setShowcuriousbutton",
       "setShowsurprisesection",
-      "setAnimationblockadded"
+      "setAnimationblockadded",
+      "setscratchcardDone"
     ]),
     constractScratch() {
       //set reference to canvas
@@ -138,12 +134,12 @@ export default {
         this.canvas.style.transition = "all 0.5s ease-in-out";
         // Hide canvas end
         //Animation start
-        this.showConfetti();
         this.updateShoeshimmer(true);
         this.setAnimationblockadded(true);
         this.setShowsurprisesection(false);
         //Animation end
         this.$emit("canvas-arearemoved");
+        this.setscratchcardDone(true);
         setTimeout(() => {
           this.updateShoeshimmer(false);
           this.setShowcuriousbutton(1);
@@ -220,13 +216,7 @@ export default {
     handleMouseUp(e) {
       this.isDrawing = false;
     },
-    showConfetti() {
-      confetti({
-        particleCount: 50,
-        spread: 50,
-        origin: { y: 0.5 }
-      });
-    }
+    showConfetti() {}
   },
   mounted() {
     this.constractScratch();
@@ -234,11 +224,6 @@ export default {
   watch: {
     filledPercentage() {
       this.checkPercentagereached();
-    },
-    selectedIndex() {
-      if (Number(selectedIndex) === 1) {
-        confetti.reset();
-      }
     }
   }
 };

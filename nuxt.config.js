@@ -29,8 +29,8 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
+    // '@nuxtjs/ngrok',
     "@nuxtjs/tailwindcss",
-    '@nuxtjs/ngrok',
     "nuxt-animejs"
   ],
   animejs: true,
@@ -52,9 +52,5 @@ export default {
       "fade-up",
       "zoom-in"
     ]
-  },
-  ngrok: {
-    // module options
-    authtoken: '1wfX25hXE9eqYM56jFGP4sy0E84_2eidW8j5hemBq1h8uNFce'
   }
 };
