@@ -1252,6 +1252,7 @@ border-radius: 8px;
   display: flex;
   justify-content: center;
   margin:0 auto 20px auto;
+  width:100%;
 }
 .example-modal-content span, .example-modal-content p
 {
