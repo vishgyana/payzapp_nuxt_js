@@ -32,7 +32,7 @@ export default {
     audiolink: [
       {
         url:
-          "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/payzapp_audio_2.mp3"
+        "http://127.0.0.1/hdfcaudio/surprise.mp3"
       },
       {
         url:
