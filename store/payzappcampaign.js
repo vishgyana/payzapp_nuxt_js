@@ -36,7 +36,7 @@ export default {
       },
       {
         url:
-          "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/payzapp_audio_1.mp3"
+        "http://127.0.0.1/hdfcaudio/getcashback.mp3"
       }
     ],
     AudioStatus: {
