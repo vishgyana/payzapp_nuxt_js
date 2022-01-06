@@ -10,6 +10,12 @@
       />
     </audio>
 
+    <audio ref="downloadaudio" loop>
+      <source
+        src="https://takeaway-vgts.s3.ap-south-1.amazonaws.com/hdfc_audio/claimoffers.mp3"
+      />
+    </audio>
+
     <Modal ref="AudioNotificationModal" @playEva="listenModalclose" />
     <Scratchcard
       v-if="selectedIndex === 0 && mainpageRender"
@@ -42,7 +48,10 @@ export default {
       completely_played_in_mute_mode: null,
       completely_played_in_unmute_mode: null,
       partially_played_in_mute_mode: null,
-      partially_played_in_unmute_mode: null
+      partially_played_in_unmute_mode: null,
+      IDLE_TIMEOUT: 20,
+      idleSecondsTimer: null,
+      idleSecondsCounter: 0
     };
   },
   created() {
@@ -113,6 +122,31 @@ export default {
         spread: 45,
         origin: { y: 0.5 }
       });
+    },
+    resetTimer() {
+      if (this.$refs.downloadaudio.currentTime != 0) {
+        this.$refs.downloadaudio.currentTime = 0;
+        this.$refs.downloadaudio.pause();
+      }
+      this.idleSecondsCounter = 0;
+    },
+    setSetinterval() {
+      this.idleSecondsTimer = window.setInterval(this.CheckIdleTime, 1000);
+    },
+    unsetSetinterval() {
+      window.clearInterval(this.idleSecondsTimer);
+      this.IDLE_TIMEOUT = 60;
+      this.idleSecondsTimer = null;
+      this.idleSecondsCounter = 0;
+    },
+    CheckIdleTime() {
+      this.idleSecondsCounter++;
+      if (this.idleSecondsCounter >= this.IDLE_TIMEOUT) {
+        this.$refs.downloadaudio.play();
+        if (this.$refs.downloadaudio.currentTime == 0) {
+          this.$refs.downloadaudio.play();
+        }
+      }
     }
   },
   computed: {
@@ -126,6 +160,15 @@ export default {
   },
   mounted() {
     this.triggerAudioplay();
+
+    //IDEAL TIME MUSIC START
+    window.onload = this.resetTimer;
+    window.onmousemove = this.resetTimer;
+    window.onmousedown = this.resetTimer;
+    window.ontouchstart = this.resetTimer;
+    window.onclick = this.resetTimer;
+    window.onkeypress = this.resetTimer;
+    //IDEAL TIME MUSIC END
   },
   watch: {
     selectedObj() {
@@ -145,8 +188,11 @@ export default {
     },
     selectedIndex() {
       if (Number(this.selectedIndex) === 1) {
+        this.setSetinterval();
         this.mutate_selectedAudiokey("getcashback");
         confetti.reset();
+      } else {
+        this.unsetSetinterval();
       }
     }
   }
