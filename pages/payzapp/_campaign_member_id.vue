@@ -49,7 +49,7 @@ export default {
       completely_played_in_unmute_mode: null,
       partially_played_in_mute_mode: null,
       partially_played_in_unmute_mode: null,
-      IDLE_TIMEOUT: 20,
+      IDLE_TIMEOUT: 60,
       idleSecondsTimer: null,
       idleSecondsCounter: 0
     };
