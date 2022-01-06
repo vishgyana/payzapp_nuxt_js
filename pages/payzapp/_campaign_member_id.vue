@@ -3,6 +3,13 @@
     <audio ref="audioElement">
       <source :src="selectedObj.url" />
     </audio>
+
+    <audio ref="hdfcbgm" loop autoplay>
+      <source
+        src="https://takeaway-vgts.s3.ap-south-1.amazonaws.com/hdfc_audio/hdfcbgm.mp3"
+      />
+    </audio>
+
     <Modal ref="AudioNotificationModal" @playEva="listenModalclose" />
     <Scratchcard
       v-if="selectedIndex === 0 && mainpageRender"
@@ -98,6 +105,7 @@ export default {
     },
     listenModalclose() {
       this.triggerAudioplay();
+      this.$refs.hdfcbgm.play();
     },
     showConfetti() {
       confetti({

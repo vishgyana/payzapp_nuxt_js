@@ -33,52 +33,52 @@ export default {
     audiolink: [
       {
         url:
-        "http://127.0.0.1/hdfcaudio/billpayment.mp3",
+        "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/hdfc_audio/billpayment.mp3",
         key : "billpayment"
       },
       {
         url:
-        "http://127.0.0.1/hdfcaudio/claimoffers.mp3",
+        "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/hdfc_audio/claimoffers.mp3",
         key : "claimoffers"
       },
       {
         url:
-        "http://127.0.0.1/hdfcaudio/congratulations.mp3",
+        "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/hdfc_audio/congratulations.mp3",
         key : "congratulations"
       },
       {
         url:
-        "http://127.0.0.1/hdfcaudio/entertainment.mp3",
+        "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/hdfc_audio/entertainment.mp3",
         key : "entertainment"
       },
       {
         url:
-        "http://127.0.0.1/hdfcaudio/fooddeliverytab.mp3",
+        "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/hdfc_audio/fooddeliverytab.mp3",
         key : "fooddeliverytab"
       },
       {
         url:
-        "http://127.0.0.1/hdfcaudio/getcashback.mp3",
+        "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/hdfc_audio/getcashback.mp3",
         key : "getcashback"
       },
       {
         url:
-        "http://127.0.0.1/hdfcaudio/groceries.mp3",
+        "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/hdfc_audio/groceries.mp3",
         key : "groceries"
       },
       {
         url:
-        "http://127.0.0.1/hdfcaudio/hellospeech.mp3",
+        "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/hdfc_audio/hellospeech.mp3",
         key : "hellospeech"
       },
       {
         url:
-        "http://127.0.0.1/hdfcaudio/service.mp3",
+        "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/hdfc_audio/service.mp3",
         key : "service"
       },
       {
         url:
-        "http://127.0.0.1/hdfcaudio/surprise.mp3",
+        "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/hdfc_audio/surprise.mp3",
         key : "surprise"
       }
     ],

@@ -539,8 +539,6 @@ export default {
   },
   watch: {
     selected_index(index) {
-      alert(index);
-
       if (index == "1") {
         this.mutate_selectedAudiokey("fooddeliverytab");
       } else if (index == "2") {
