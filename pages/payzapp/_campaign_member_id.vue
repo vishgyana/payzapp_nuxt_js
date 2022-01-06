@@ -112,7 +112,7 @@ export default {
         this.$refs.hdfcbgm.pause();
       } else {
         this.$refs.audioElement.play();
-        this.$refs.downloadaudio.hdfcbgm();
+        this.$refs.hdfcbgm.hdfcbgm();
       }
     },
     listenModalclose() {
