@@ -108,8 +108,11 @@ export default {
     visibilityChange() {
       if (document.hidden) {
         this.$refs.audioElement.pause();
+        this.$refs.downloadaudio.pause();
+        this.$refs.hdfcbgm.pause();
       } else {
         this.$refs.audioElement.play();
+        this.$refs.downloadaudio.hdfcbgm();
       }
     },
     listenModalclose() {
@@ -177,6 +180,8 @@ export default {
     isaudioMuted() {
       let MValue = this.audioMuted == "false" ? false : true;
       this.$refs.audioElement.muted = MValue;
+      this.$refs.hdfcbgm.muted = MValue;
+      this.$refs.downloadaudio.muted = MValue;
     },
     repeatBtnclickcount() {
       this.triggerAudioplay();
