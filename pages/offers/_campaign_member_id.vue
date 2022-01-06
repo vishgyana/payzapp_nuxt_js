@@ -363,7 +363,7 @@
 </template>
 
 <script>
-import { mapActions, mapState } from "vuex";
+import { mapActions, mapState, mapMutations } from "vuex";
 import Food from "@/components/payzappcomponent/Screen/CashBackList/Food";
 import Grocries from "@/components/payzappcomponent/Screen/CashBackList/Grocries";
 import Bill from "@/components/payzappcomponent/Screen/CashBackList/Bill";
@@ -484,6 +484,7 @@ export default {
     }
   },
   methods: {
+    ...mapMutations("payzappcampaign", ["mutate_selectedAudiokey"]),
     getPositionAtCenter(element) {
       if (element !== null) {
         const { top, left, width, height } = element.getBoundingClientRect();
@@ -534,6 +535,21 @@ export default {
     ...mapActions("payzappcampaign", ["increaseIndex"]),
     Downloadlink() {
       window.open("http://onelink.to/82e84e", "_blank");
+    }
+  },
+  watch: {
+    selected_index(index) {
+      if (index == "1") {
+        this.mutate_selectedAudiokey("fooddeliverytab");
+      } else if (index == "2") {
+        this.mutate_selectedAudiokey("groceries");
+      } else if (index == "3") {
+        this.mutate_selectedAudiokey("billpayment");
+      } else if (index == "4") {
+        this.mutate_selectedAudiokey("service");
+      } else if (index == "5") {
+        this.mutate_selectedAudiokey("entertainment");
+      }
     }
   }
 };

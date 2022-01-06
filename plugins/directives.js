@@ -9,10 +9,8 @@ Vue.directive("clickoutside", {
       }
     };
     document.body.addEventListener("click", el.clickOutsideEvent);
-    alert("Hello Mount");
   },
   unmounted(el) {
     document.body.removeEventListener("click", el.clickOutsideEvent);
-    alert("Hello Unmount");
   }
 });

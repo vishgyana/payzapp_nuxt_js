@@ -29,14 +29,57 @@ export default {
     isAnimationblockadded: false,
     DeviceOS: null,
     is_scratchcardDone: false,
+    selectedAudiokey : "surprise",
     audiolink: [
       {
         url:
-          "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/payzapp_audio_2.mp3"
+        "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/hdfc_audio/billpayment.mp3",
+        key : "billpayment"
       },
       {
         url:
-          "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/payzapp_audio_1.mp3"
+        "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/hdfc_audio/claimoffers.mp3",
+        key : "claimoffers"
+      },
+      {
+        url:
+        "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/hdfc_audio/congratulations.mp3",
+        key : "congratulations"
+      },
+      {
+        url:
+        "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/hdfc_audio/entertainment.mp3",
+        key : "entertainment"
+      },
+      {
+        url:
+        "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/hdfc_audio/fooddeliverytab.mp3",
+        key : "fooddeliverytab"
+      },
+      {
+        url:
+        "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/hdfc_audio/getcashback.mp3",
+        key : "getcashback"
+      },
+      {
+        url:
+        "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/hdfc_audio/groceries.mp3",
+        key : "groceries"
+      },
+      {
+        url:
+        "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/hdfc_audio/hellospeech.mp3",
+        key : "hellospeech"
+      },
+      {
+        url:
+        "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/hdfc_audio/service.mp3",
+        key : "service"
+      },
+      {
+        url:
+        "https://takeaway-vgts.s3.ap-south-1.amazonaws.com/hdfc_audio/surprise.mp3",
+        key : "surprise"
       }
     ],
     AudioStatus: {
@@ -242,11 +285,18 @@ export default {
     },
     mutate_is_scratchcardDone(state, payload) {
       state.is_scratchcardDone = payload;
-    }
+    },
+    mutate_selectedAudiokey(state, payload) {
+      state.selectedAudiokey = payload;
+    },
   },
   getters: {
     selectedObj: state => {
-      return state.audiolink[state.selectedIndex];
+      for (let i=0; i < state.audiolink.length; i++) {
+        if (state.audiolink[i].key === state.selectedAudiokey) {
+          return state.audiolink[i];
+        }
+      }
     },
     isaudioMuted: state => {
       return state.audioMuted;
@@ -289,3 +339,4 @@ export default {
     }
   }
 };
+
