@@ -65,7 +65,7 @@
                 @click="changeOnButtonClick(2)"
                 :class="[selected_index === 2 ? 'activestate' : '']"
               >
-                <a class="nav-link" id="groceries_value">Groceries</a>
+                <a class="nav-link" id="groceries_value">Shopping</a>
               </div>
             </swiper-slide>
             <swiper-slide>
