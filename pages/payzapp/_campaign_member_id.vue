@@ -36,6 +36,10 @@ import MyPromise from "promise";
 import confetti from "canvas-confetti";
 confetti.Promise = MyPromise;
 
+const IDLE_TIMEOUT = 4;
+const idleSecondsTimer = null;
+const idleSecondsCounter = 0;
+
 export default {
   data() {
     return {
@@ -49,9 +53,9 @@ export default {
       completely_played_in_unmute_mode: null,
       partially_played_in_mute_mode: null,
       partially_played_in_unmute_mode: null,
-      IDLE_TIMEOUT: 60,
-      idleSecondsTimer: null,
-      idleSecondsCounter: 0
+      IDLE_TIMEOUT: IDLE_TIMEOUT,
+      idleSecondsTimer: idleSecondsTimer,
+      idleSecondsCounter: idleSecondsCounter
     };
   },
   created() {
@@ -84,6 +88,7 @@ export default {
       this.$refs.audioElement
         .play()
         .then(() => {
+          this.unsetSetinterval();
           this.mainpageRenderAction(true);
         })
         .catch(() => {
@@ -98,6 +103,9 @@ export default {
       this.changebuttonBlink("false");
       this.$refs.audioElement.load();
       this.$refs.audioElement.addEventListener("ended", () => {
+        if (this.idleSecondsTimer == null && Number(this.selectedIndex) === 1) {
+          this.setSetinterval();
+        }
         this.audioEnded(this.$refs.audioElement.currentTime);
       });
       this.$refs.audioElement.addEventListener("canplaythrough", null);
@@ -138,9 +146,9 @@ export default {
     },
     unsetSetinterval() {
       window.clearInterval(this.idleSecondsTimer);
-      this.IDLE_TIMEOUT = 60;
-      this.idleSecondsTimer = null;
-      this.idleSecondsCounter = 0;
+      this.IDLE_TIMEOUT = IDLE_TIMEOUT;
+      this.idleSecondsTimer = idleSecondsTimer;
+      this.idleSecondsCounter = idleSecondsCounter;
     },
     CheckIdleTime() {
       this.idleSecondsCounter++;
@@ -193,11 +201,8 @@ export default {
     },
     selectedIndex() {
       if (Number(this.selectedIndex) === 1) {
-        this.setSetinterval();
         this.mutate_selectedAudiokey("getcashback");
         confetti.reset();
-      } else {
-        this.unsetSetinterval();
       }
     }
   }
