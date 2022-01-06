@@ -16,7 +16,7 @@
 import Scratchcard from "@/pages/scratchcard/_campaign_member_id.vue";
 import Offers from "@/pages/offers/_campaign_member_id.vue";
 import Modal from "@/components/payzappcomponent/Modal/index.vue";
-import { mapState, mapActions, mapGetters } from "vuex";
+import { mapState, mapActions, mapGetters, mapMutations } from "vuex";
 
 //canvas-confetti start
 import MyPromise from "promise";
@@ -52,6 +52,7 @@ export default {
       "mainpageRenderAction",
       "changebuttonBlink"
     ]),
+    ...mapMutations("payzappcampaign", ["mutate_selectedAudiokey"]),
     moveToOffers() {
       this.anima_class = "button-zoom-in";
       setTimeout(() => {
@@ -136,6 +137,7 @@ export default {
     },
     selectedIndex() {
       if (Number(this.selectedIndex) === 1) {
+        this.mutate_selectedAudiokey("getcashback");
         confetti.reset();
       }
     }

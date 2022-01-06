@@ -29,14 +29,57 @@ export default {
     isAnimationblockadded: false,
     DeviceOS: null,
     is_scratchcardDone: false,
+    selectedAudiokey : "surprise",
     audiolink: [
       {
         url:
-        "http://127.0.0.1/hdfcaudio/surprise.mp3"
+        "http://127.0.0.1/hdfcaudio/billpayment.mp3",
+        key : "billpayment"
       },
       {
         url:
-        "http://127.0.0.1/hdfcaudio/getcashback.mp3"
+        "http://127.0.0.1/hdfcaudio/claimoffers.mp3",
+        key : "claimoffers"
+      },
+      {
+        url:
+        "http://127.0.0.1/hdfcaudio/congratulations.mp3",
+        key : "congratulations"
+      },
+      {
+        url:
+        "http://127.0.0.1/hdfcaudio/entertainment.mp3",
+        key : "entertainment"
+      },
+      {
+        url:
+        "http://127.0.0.1/hdfcaudio/fooddeliverytab.mp3",
+        key : "fooddeliverytab"
+      },
+      {
+        url:
+        "http://127.0.0.1/hdfcaudio/getcashback.mp3",
+        key : "getcashback"
+      },
+      {
+        url:
+        "http://127.0.0.1/hdfcaudio/groceries.mp3",
+        key : "groceries"
+      },
+      {
+        url:
+        "http://127.0.0.1/hdfcaudio/hellospeech.mp3",
+        key : "hellospeech"
+      },
+      {
+        url:
+        "http://127.0.0.1/hdfcaudio/service.mp3",
+        key : "service"
+      },
+      {
+        url:
+        "http://127.0.0.1/hdfcaudio/surprise.mp3",
+        key : "surprise"
       }
     ],
     AudioStatus: {
@@ -242,11 +285,18 @@ export default {
     },
     mutate_is_scratchcardDone(state, payload) {
       state.is_scratchcardDone = payload;
-    }
+    },
+    mutate_selectedAudiokey(state, payload) {
+      state.selectedAudiokey = payload;
+    },
   },
   getters: {
     selectedObj: state => {
-      return state.audiolink[state.selectedIndex];
+      for (let i=0; i < state.audiolink.length; i++) {
+        if (state.audiolink[i].key === state.selectedAudiokey) {
+          return state.audiolink[i];
+        }
+      }
     },
     isaudioMuted: state => {
       return state.audioMuted;
@@ -289,3 +339,4 @@ export default {
     }
   }
 };
+

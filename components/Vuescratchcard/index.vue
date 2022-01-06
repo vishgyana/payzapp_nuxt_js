@@ -67,6 +67,7 @@ export default {
       "setAnimationblockadded",
       "setscratchcardDone"
     ]),
+    ...mapMutations("payzappcampaign", ["mutate_selectedAudiokey"]),
     constractScratch() {
       //set reference to canvas
       this.canvas = this.$refs.jscanvas;
@@ -152,6 +153,7 @@ export default {
     checkPercentagereached() {
       if (this.filledPercentage >= this.removeCanvaspercentagelimit) {
         this.removeCanvaslayer();
+        this.mutate_selectedAudiokey("congratulations");
       }
     },
     angleBetween(point1, point2) {
