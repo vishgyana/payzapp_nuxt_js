@@ -17,9 +17,9 @@ export default {
     campaign_member: {},
     selectedIndex: 0,
     InputData: { communication: [], card: "", feedback_description: "" },
-    audioMuted: "false",
+    audioMuted:false,
     feedBack: "false",
-    buttonBlink: "false",
+    buttonBlink:false,
     repeatBtnclickcount: 1,
     mainpageRender: false,
     selectedCampaignoffer: null,
@@ -98,13 +98,13 @@ export default {
       context.commit("UpdateIndexCommit", updatedvalue);
     },
     audioMute(context) {
-      context.commit("updateAudioIcon", "true");
+      context.commit("updateAudioIcon",true);
     },
     audioUnmute(context) {
-      context.commit("updateAudioIcon", "false");
+      context.commit("updateAudioIcon",false);
     },
     changebuttonBlink(context, payload) {
-      context.commit("UpdatebuttonBlink", payload);
+      context.commit("UpdatebuttonBlink",payload);
     },
     getCustomerdetails(context, payload) {
       getCustomerdetails_api(payload.campaign_member_id, payload.fingerprint)
@@ -244,7 +244,7 @@ export default {
     FeedBackIcon(state, payload) {
       state.feedBack = payload;
     },
-    UpdatebuttonBlink(state, payload) {
+    UpdatebuttonBlink(state,payload) {
       state.buttonBlink = payload;
     },
     Updatecampaign_member(state, payload) {
@@ -297,9 +297,6 @@ export default {
           return state.audiolink[i];
         }
       }
-    },
-    isaudioMuted: state => {
-      return state.audioMuted;
     },
     processId: state => {
       let stage = "";
