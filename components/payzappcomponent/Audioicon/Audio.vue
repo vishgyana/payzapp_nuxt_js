@@ -236,13 +236,13 @@ export default {
   computed: {
     ...mapState("payzappcampaign", ["audioMuted", "buttonBlink"]),
     showMutebtn() {
-      return this.audioMuted == "true" && !this.showReplaybtn ? true : false;
+      return this.audioMuted && !this.showReplaybtn ? true : false;
     },
     showUnmutebtn() {
-      return this.audioMuted == "false" && !this.showReplaybtn ? true : false;
+      return !this.audioMuted && !this.showReplaybtn ? true : false;
     },
     showReplaybtn() {
-      return this.buttonBlink == "true" ? true : false;
+      return this.buttonBlink;
     }
   },
   methods: {

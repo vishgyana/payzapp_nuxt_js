@@ -97,10 +97,10 @@ export default {
         });
     },
     audioEnded() {
-      this.changebuttonBlink("true");
+      this.changebuttonBlink(true);
     },
     triggerAudioplay() {
-      this.changebuttonBlink("false");
+      this.changebuttonBlink(false);
       this.$refs.audioElement.load();
       this.$refs.audioElement.addEventListener("ended", () => {
         if (this.idleSecondsTimer == null && Number(this.selectedIndex) === 1) {
@@ -120,7 +120,7 @@ export default {
         this.$refs.hdfcbgm.pause();
       } else {
         this.$refs.audioElement.play();
-        this.$refs.hdfcbgm.hdfcbgm();
+        this.$refs.hdfcbgm.play();
       }
     },
     listenModalclose() {
@@ -165,9 +165,10 @@ export default {
       "selectedIndex",
       "repeatBtnclickcount",
       "mainpageRender",
-      "is_scratchcardDone"
+      "is_scratchcardDone",
+      "audioMuted"
     ]),
-    ...mapGetters("payzappcampaign", ["selectedObj", "isaudioMuted"])
+    ...mapGetters("payzappcampaign", ["selectedObj"])
   },
   mounted() {
     this.triggerAudioplay();
@@ -185,11 +186,10 @@ export default {
     selectedObj() {
       this.triggerAudioplay();
     },
-    isaudioMuted() {
-      let MValue = this.audioMuted == "false" ? false : true;
-      this.$refs.audioElement.muted = MValue;
-      this.$refs.hdfcbgm.muted = MValue;
-      this.$refs.downloadaudio.muted = MValue;
+    audioMuted() {
+      this.$refs.audioElement.muted = this.audioMuted;
+      this.$refs.hdfcbgm.muted = this.audioMuted;
+      this.$refs.downloadaudio.muted = this.audioMuted;
     },
     repeatBtnclickcount() {
       this.triggerAudioplay();
