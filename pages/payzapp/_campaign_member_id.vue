@@ -116,6 +116,7 @@ export default {
     visibilityChange() {
       if (document.hidden) {
         this.$refs.audioElement.pause();
+        this.$refs.downloadaudio.currentTime = 0;
         this.$refs.downloadaudio.pause();
         this.$refs.hdfcbgm.pause();
       } else {
@@ -135,11 +136,11 @@ export default {
       });
     },
     resetTimer() {
+      this.idleSecondsCounter = 0;
       if (this.$refs.downloadaudio.currentTime != 0) {
         this.$refs.downloadaudio.currentTime = 0;
         this.$refs.downloadaudio.pause();
       }
-      this.idleSecondsCounter = 0;
     },
     setSetinterval() {
       this.idleSecondsTimer = window.setInterval(this.CheckIdleTime, 1000);
@@ -153,8 +154,11 @@ export default {
     CheckIdleTime() {
       this.idleSecondsCounter++;
       if (this.idleSecondsCounter >= this.IDLE_TIMEOUT) {
-        this.$refs.downloadaudio.play();
-        if (this.$refs.downloadaudio.currentTime == 0) {
+        if (
+          this.$refs.audioElement.currentTime &&
+          !document.hidden &&
+          this.$refs.downloadaudio.currentTime == 0
+        ) {
           this.$refs.downloadaudio.play();
         }
       }
