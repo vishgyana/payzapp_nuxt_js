@@ -539,7 +539,9 @@ export default {
   },
   watch: {
     selected_index(index) {
-      if (index == "1") {
+      if (index == "0") {
+        this.mutate_selectedAudiokey("getcashback");
+      } else if (index == "1") {
         this.mutate_selectedAudiokey("fooddeliverytab");
       } else if (index == "2") {
         this.mutate_selectedAudiokey("groceries");

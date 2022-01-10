@@ -1,6 +1,9 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   ssr: false,
+  server: {
+    host: '0'
+  },
   target: "static",
   head: {
     title: "PAYZAPP",
